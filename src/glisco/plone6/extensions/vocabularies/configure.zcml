@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="glisco.plone6.extensions">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".page_layout_types.PageLayoutTypesFactory"
+        name="glisco.plone6.extensions.PageLayoutTypes"
+    />
+
+
+</configure>
