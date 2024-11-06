@@ -3,7 +3,7 @@
   <configlet action_id="glisco.vocabularies-controlpanel"
              appId="glisco.vocabularies-controlpanel"
              category="Products"
-             title="Vovabulary Settings"
+             title="Vocabulary Settings"
              visible="True"
   >
     <permission>Manage portal</permission>
