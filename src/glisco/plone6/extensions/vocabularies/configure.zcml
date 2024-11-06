@@ -9,5 +9,8 @@
         name="glisco.plone6.extensions.PageLayoutTypes"
     />
 
+    <adapter
+        factory=".controlpanel.PageRegistryConfigletPanel"
+        name="glisco.vocabularies-controlpanel" />
 
 </configure>
