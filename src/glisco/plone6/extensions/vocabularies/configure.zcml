@@ -10,7 +10,7 @@
     />
 
     <adapter
-        factory=".controlpanel.PageRegistryConfigletPanel"
+        factory=".controlpannel.PageRegistryConfigletPanel"
         name="glisco.vocabularies-controlpanel" />
 
 </configure>
