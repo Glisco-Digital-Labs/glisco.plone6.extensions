@@ -43,12 +43,6 @@ from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXO
    
 class IPageSettings(Interface):
 
-    test_segs_vocab = schema.Choice(
-        title="Type of talk",
-        vocabulary="glisco.vocabularies.market_segments",
-        required=True,
-    )
-
     types_of_page = schema.JSONField(
         title="Types of Page",
         description="Available types of a page",
