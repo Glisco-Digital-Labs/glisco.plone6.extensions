@@ -13,4 +13,8 @@
         factory=".controlpannel.PageRegistryConfigletPanel"
         name="glisco.vocabularies-controlpanel" />
 
+    <utility
+        name="glisco.vocabularies.market_segments"
+        component=".utilities.MarketSegmentsVocabulary" />
+
 </configure>
