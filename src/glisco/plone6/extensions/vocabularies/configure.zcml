@@ -17,4 +17,20 @@
         name="glisco.vocabularies.market_segments"
         component=".utilities.MarketSegmentsVocabulary" />
 
+    <utility
+        name="glisco.vocabularies.product_segments"
+        component=".utilities.ProductSegmentsVocabulary" />
+
+    <utility
+        name="glisco.vocabularies.product_types"
+        component=".utilities.ProductTypesVocabulary" />
+
+    <utility
+        name="glisco.vocabularies.product_materials"
+        component=".utilities.ProductMaterialsVocabulary" />
+
+    <utility
+        name="glisco.vocabularies.production_techniques"
+        component=".utilities.ProductionTechniquesVocabulary" />
+
 </configure>

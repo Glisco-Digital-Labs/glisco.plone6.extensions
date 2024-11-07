@@ -18,7 +18,7 @@ from zope.interface import Interface
 # FashionProductGenreVocabularyFactory - Product Segment (body, dress, shirt, egg cups, dishes, guitar, etc)
 # FashionProductStructureVocabularyFactory - Product Type (quilt, jacquard, acoustic guitar, digital guitar)
 # FashionProductCompositionVocabularyFactory - Composition/Materials (elastane, cotton, Stoneware, maple, mahogany, etc)
-# FashionProductAddonsVocabularyFactory - Product Techniques (embossing, washing, hand-carved, hand-painted, etc)
+# FashionProductAddonsVocabularyFactory - Production Techniques (embossing, washing, hand-carved, hand-painted, etc)
 #
 # ###########################
 # Other possible taxonomies are: 
@@ -26,7 +26,7 @@ from zope.interface import Interface
 # Product Collection (Birdy, etc)
 # Product Theme (Mediterranean Summer, Caotic Nights, etc)
 # Product Colour (Red, Indigo, SummeryGreen, etc)
-# Product Finish (Hand-decorated, etc)
+# Product Finish (Hand-decorated, etc) - this can be as techniques
 # Product Safety (dishwasher safe, microwave safe, food-approved, etc)
 #
 # ###########################
@@ -39,7 +39,13 @@ from zope.interface import Interface
 from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.marketsegments import MARKET_SEGMENTS_DATA
-from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY, TYPE_OF_PAGE_TAXONOMY
+from glisco.plone6.extensions.vocabularies.data.productsegments import PRODUCT_SEGMENTS_DATA
+from glisco.plone6.extensions.vocabularies.data.productmaterials import PRODUCT_MATERIALS_DATA
+from glisco.plone6.extensions.vocabularies.data.productiontechniques import PRODUCTION_TECHNIQUES_DATA
+from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPES_DATA
+from glisco.plone6.extensions.vocabularies.constants import \
+     MARKET_SEGMENTS_TAXONOMY, PRODUCT_SEGMENTS_TAXONOMY, PRODUCT_TYPES_TAXONOMY, \
+     PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY 
    
 class IPageSettings(Interface):
 
@@ -72,6 +78,75 @@ class IPageSettings(Interface):
     )
     directives.widget(
         "market_segments",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    product_segments = schema.JSONField(
+        title="Product Segments",
+        description="Product Segments",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={ 
+            "lid": PRODUCT_SEGMENTS_TAXONOMY,
+            "items": PRODUCT_SEGMENTS_DATA },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "product_segments",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    product_types = schema.JSONField(
+        title="Product Types",
+        description="Product Types",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={ 
+            "lid": PRODUCT_TYPES_TAXONOMY,
+            "items": PRODUCT_TYPES_DATA },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "product_types",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+
+    product_materials = schema.JSONField(
+        title="Product Materials",
+        description="Product Materials",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={ 
+            "lid": PRODUCT_MATERIALS_TAXONOMY,
+            "items": PRODUCT_MATERIALS_DATA },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "product_materials",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    production_techniques = schema.JSONField(
+        title="Production Techniques",
+        description="Production Techniques",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={ 
+            "lid": PRODUCTION_TECHNIQUES_TAXONOMY,
+            "items": PRODUCTION_TECHNIQUES_DATA },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "production_techniques",
         frontendOptions={
             "widget": "vocabularyterms",
         },
