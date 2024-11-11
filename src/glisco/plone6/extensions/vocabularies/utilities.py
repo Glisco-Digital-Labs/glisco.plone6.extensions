@@ -22,49 +22,19 @@ def PageTypesVocabulary(context):
 @provider(IVocabularyFactory)
 def MarketSegmentsVocabulary(context):
     return loadVocabulary(MARKET_SEGMENTS_TAXONOMY)
-    # registry_record_value = api.portal.get_registry_record(MARKET_SEGMENTS_TAXONOMY)
-    # items = registry_record_value.get("items", [])
-    # lang = api.portal.get_current_language()
-    # return SimpleVocabulary.fromItems(
-    #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    # )
 
 @provider(IVocabularyFactory)
 def ProductSegmentsVocabulary(context):
     return loadVocabulary(PRODUCT_SEGMENTS_TAXONOMY)
-    # registry_record_value = api.portal.get_registry_record(PRODUCT_SEGMENTS_TAXONOMY)
-    # items = registry_record_value.get("items", [])
-    # lang = api.portal.get_current_language()
-    # return SimpleVocabulary.fromItems(
-    #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    # )
 
 @provider(IVocabularyFactory)
 def ProductTypesVocabulary(context):
     return loadVocabulary(PRODUCT_TYPES_TAXONOMY)
-    # registry_record_value = api.portal.get_registry_record(PRODUCT_TYPES_TAXONOMY)
-    # items = registry_record_value.get("items", [])
-    # lang = api.portal.get_current_language()
-    # return SimpleVocabulary.fromItems(
-    #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    # )
 
 @provider(IVocabularyFactory)
 def ProductMaterialsVocabulary(context):
     return loadVocabulary(PRODUCT_MATERIALS_TAXONOMY)
-    # registry_record_value = api.portal.get_registry_record(PRODUCT_MATERIALS_TAXONOMY)
-    # items = registry_record_value.get("items", [])
-    # lang = api.portal.get_current_language()
-    # return SimpleVocabulary.fromItems(
-    #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    # )
 
 @provider(IVocabularyFactory)
 def ProductionTechniquesVocabulary(context):
     return loadVocabulary(PRODUCTION_TECHNIQUES_TAXONOMY)
-    # registry_record_value = api.portal.get_registry_record(PRODUCTION_TECHNIQUES_TAXONOMY)
-    # items = registry_record_value.get("items", [])
-    # lang = api.portal.get_current_language()
-    # return SimpleVocabulary.fromItems(
-    #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    # )

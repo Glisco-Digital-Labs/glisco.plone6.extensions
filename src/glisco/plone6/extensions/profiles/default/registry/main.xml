@@ -14,4 +14,8 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IMarketSettings"
       prefix="glisco.extensions.settings.markets" />
 
+    <records
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IProductSettings"
+      prefix="glisco.extensions.settings.products" />
+
 </registry>
