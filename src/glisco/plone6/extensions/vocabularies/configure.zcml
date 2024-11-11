@@ -4,18 +4,7 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
-    <!-- <utility
-        name="glisco.plone6.extensions.PageLayoutTypes"
-        component=".page_layout_types.PageLayoutTypesFactory"
-    /> -->
-
-    <adapter
-        factory=".controlpannel.PageRegistryConfigletPanel"
-        name="glisco.page-controlpanel" />
-
-    <adapter
-        factory=".controlpannel.MarketRegistryConfigletPanel"
-        name="glisco.market-controlpanel" />
+    <!-- -*- VOCABULARIES -*- -->
 
     <utility   
         name="glisco.extensions.vocabularies.pages.types"
@@ -40,5 +29,19 @@
     <utility
         name="glisco.extensions.vocabularies.productions.techniques"
         component=".utilities.ProductionTechniquesVocabulary" />
+
+    <!-- -*- CONFIGLETS -*- -->
+
+    <adapter
+        factory=".controlpannel.PageRegistryConfigletPanel"
+        name="glisco.page-controlpanel" />
+
+    <adapter
+        factory=".controlpannel.MarketRegistryConfigletPanel"
+        name="glisco.market-controlpanel" />
+
+    <adapter
+        factory=".controlpannel.ProductRegistryConfigletPanel"
+        name="glisco.products-controlpanel" />
 
 </configure>
