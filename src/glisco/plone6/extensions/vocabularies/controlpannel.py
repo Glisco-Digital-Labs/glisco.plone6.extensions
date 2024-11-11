@@ -9,7 +9,7 @@ class PageRegistryConfigletPanel(RegistryConfigletPanel):
     """Volto control panel"""
 
     schema = IPageSettings
-    schema_prefix = "glisco.vocabularies"
+    schema_prefix = "glisco.extensions.settings.pages"
     configlet_id = "glisco.page-controlpanel"
     configlet_category_id = "Products"
     title = "Vocabulary Settings"
@@ -20,7 +20,7 @@ class MarketRegistryConfigletPanel(RegistryConfigletPanel):
     """Volto control panel"""
 
     schema = IMarketSettings
-    schema_prefix = "glisco.market"
+    schema_prefix = "glisco.extensions.settings.markets"
     configlet_id = "glisco.market-controlpanel"
     configlet_category_id = "Products"
     title = "Market Settings"

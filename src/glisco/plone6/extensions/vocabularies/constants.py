@@ -1,11 +1,11 @@
 import json
 
-TYPE_OF_PAGE_TAXONOMY = "glisco.plone6.extensions.vocabularies.type_of_page"
-MARKET_SEGMENTS_TAXONOMY = "glisco.plone6.extensions.vocabularies.market_segments"
-PRODUCT_SEGMENTS_TAXONOMY = "glisco.plone6.extensions.vocabularies.product_segments"
-PRODUCT_TYPES_TAXONOMY = "glisco.plone6.extensions.vocabularies.product_types"
-PRODUCT_MATERIALS_TAXONOMY = "glisco.plone6.extensions.vocabularies.product_materials"
-PRODUCTION_TECHNIQUES_TAXONOMY = "glisco.plone6.extensions.vocabularies.production_techniques"
+TYPE_OF_PAGE_TAXONOMY = "glisco.extensions.vocabularies.pages.types"
+MARKET_SEGMENTS_TAXONOMY = "glisco.extensions.vocabularies.markets.segments"
+PRODUCT_SEGMENTS_TAXONOMY = "glisco.extensions.vocabularies.products.segments"
+PRODUCT_TYPES_TAXONOMY = "glisco.extensions.vocabularies.products.types"
+PRODUCT_MATERIALS_TAXONOMY = "glisco.extensions.vocabularies.products.materials"
+PRODUCTION_TECHNIQUES_TAXONOMY = "glisco.extensions.vocabularies.products.techniques"
 
 VOCABULARY_SCHEMA = json.dumps(
     {

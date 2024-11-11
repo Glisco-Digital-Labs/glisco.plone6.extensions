@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from glisco.plone6.extensions import _
 from plone import schema
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
@@ -10,6 +9,8 @@ from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
 
+from glisco.plone6.extensions import _
+from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY 
 
 class IMarketAddressableMarker(Interface):
     pass
@@ -25,16 +26,9 @@ class IMarketAddressable(model.Schema):
         required = False,
         missing_value = '',
         value_type = schema.Choice(
-            vocabulary = 'glisco.vocabularies.market_segments',
+            vocabulary = MARKET_SEGMENTS_TAXONOMY,
         )
     )
-
-    # market_segments = schema.Choice(
-    #     title="Market Segment",
-    #     vocabulary="glisco.vocabularies.market_segments",
-    #     required=True,
-    # )
-
 
 @implementer(IMarketAddressable)
 @adapter(IMarketAddressableMarker)

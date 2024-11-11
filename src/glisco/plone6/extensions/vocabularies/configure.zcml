@@ -18,27 +18,27 @@
         name="glisco.market-controlpanel" />
 
     <utility   
-        name="glisco.vocabularies.pages"
+        name="glisco.extensions.vocabularies.pages.types"
         component=".utilities.PageTypesVocabulary" />
 
     <utility
-        name="glisco.vocabularies.market_segments"
+        name="glisco.extensions.vocabularies.markets.segments"
         component=".utilities.MarketSegmentsVocabulary" />
 
     <utility
-        name="glisco.vocabularies.product_segments"
+        name="glisco.extensions.vocabularies.products.segments"
         component=".utilities.ProductSegmentsVocabulary" />
 
     <utility
-        name="glisco.vocabularies.product_types"
+        name="glisco.extensions.vocabularies.products.types"
         component=".utilities.ProductTypesVocabulary" />
 
     <utility
-        name="glisco.vocabularies.product_materials"
+        name="glisco.extensions.vocabularies.products.materials"
         component=".utilities.ProductMaterialsVocabulary" />
 
     <utility
-        name="glisco.vocabularies.production_techniques"
+        name="glisco.extensions.vocabularies.productions.techniques"
         component=".utilities.ProductionTechniquesVocabulary" />
 
 </configure>

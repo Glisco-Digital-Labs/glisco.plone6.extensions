@@ -49,10 +49,10 @@ from glisco.plone6.extensions.vocabularies.constants import \
 
 class IMarketSettings(Interface)   : 
 
-    # enable_market_tagging = schema.Bool(
-    #     title=_(u"Enable Market-based tagging of content"), 
-    #     required=False
-    # )
+    enable_market_tagging = schema.Bool(
+        title=_(u"Enable Market-based tagging of content"), 
+        required=False
+    )
     
     market_segments = schema.JSONField(
         title="Market Segments",
