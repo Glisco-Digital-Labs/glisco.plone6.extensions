@@ -12,8 +12,8 @@ PAGE_BLOCK_LAYOUTS_DATA = [
     {
         "token": PAGE_BLOCK_LAYOUTS_TAXONOMY + ".hidden",
         "titles": {
-            "en": "None",
-            "pt": "None",
+            "en": "Hidden",
+            "pt": "Hidden",
         },
     },
 
