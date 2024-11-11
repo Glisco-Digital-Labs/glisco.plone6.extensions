@@ -4,10 +4,10 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
-    <utility
-        component=".page_layout_types.PageLayoutTypesFactory"
+    <!-- <utility
         name="glisco.plone6.extensions.PageLayoutTypes"
-    />
+        component=".page_layout_types.PageLayoutTypesFactory"
+    /> -->
 
     <adapter
         factory=".controlpannel.PageRegistryConfigletPanel"
@@ -16,6 +16,10 @@
     <adapter
         factory=".controlpannel.MarketRegistryConfigletPanel"
         name="glisco.market-controlpanel" />
+
+    <utility   
+        name="glisco.vocabularies.pages"
+        component=".utilities.PageTypesVocabulary" />
 
     <utility
         name="glisco.vocabularies.market_segments"

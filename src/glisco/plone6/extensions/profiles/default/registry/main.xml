@@ -7,11 +7,11 @@
 
     <records
       interface="glisco.plone6.extensions.vocabularies.interfaces.IPageSettings"
-      prefix="glisco.vocabularies" />
+      prefix="glisco.vocabularies.pages" />
 
 
     <records
       interface="glisco.plone6.extensions.vocabularies.interfaces.IMarketSettings"
-      prefix="glisco.vocabularies" />
+      prefix="glisco.vocabularies.market_segments" />
 
 </registry>
