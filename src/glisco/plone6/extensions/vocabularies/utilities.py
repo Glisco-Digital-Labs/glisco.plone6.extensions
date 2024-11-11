@@ -57,7 +57,7 @@ def ProductMaterialsVocabulary(context):
     # lang = api.portal.get_current_language()
     # return SimpleVocabulary.fromItems(
     #     [[item["token"], item["token"], item["titles"][lang]] for item in items]
-    )
+    # )
 
 @provider(IVocabularyFactory)
 def ProductionTechniquesVocabulary(context):
