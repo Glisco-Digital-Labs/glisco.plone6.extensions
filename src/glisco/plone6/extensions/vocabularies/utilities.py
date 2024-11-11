@@ -5,7 +5,8 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 from glisco.plone6.extensions.vocabularies.constants import \
      MARKET_SEGMENTS_TAXONOMY, PRODUCT_SEGMENTS_TAXONOMY, PRODUCT_TYPES_TAXONOMY, \
-     PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY 
+     PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY, \
+     PAGE_BLOCK_LAYOUTS_TAXONOMY
 
 def loadVocabulary(name) :
     registry_record_value = api.portal.get_registry_record(name)
@@ -18,6 +19,10 @@ def loadVocabulary(name) :
 @provider(IVocabularyFactory)
 def PageTypesVocabulary(context):
     return loadVocabulary(TYPE_OF_PAGE_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def BlockLayoutTypesVocabulary(context):
+    return loadVocabulary(PAGE_BLOCK_LAYOUTS_TAXONOMY)
     
 @provider(IVocabularyFactory)
 def MarketSegmentsVocabulary(context):

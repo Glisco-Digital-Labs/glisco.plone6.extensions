@@ -30,6 +30,10 @@
         name="glisco.extensions.vocabularies.productions.techniques"
         component=".utilities.ProductionTechniquesVocabulary" />
 
+    <utility
+        name="glisco.extensions.vocabularies.pages.blocks.layouts"
+        component=".utilities.BlockLayoutTypesVocabulary" />
+
     <!-- -*- CONFIGLETS -*- -->
 
     <adapter

@@ -43,9 +43,11 @@ from glisco.plone6.extensions.vocabularies.data.productsegments import PRODUCT_S
 from glisco.plone6.extensions.vocabularies.data.productmaterials import PRODUCT_MATERIALS_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import PRODUCTION_TECHNIQUES_DATA
 from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPES_DATA
+from glisco.plone6.extensions.vocabularies.data.blocklayouts import PAGE_BLOCK_LAYOUTS_DATA
 from glisco.plone6.extensions.vocabularies.constants import \
      MARKET_SEGMENTS_TAXONOMY, PRODUCT_SEGMENTS_TAXONOMY, PRODUCT_TYPES_TAXONOMY, \
-     PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY 
+     PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY, \
+     PAGE_BLOCK_LAYOUTS_TAXONOMY
 
 class IMarketSettings(Interface)   : 
 
@@ -89,6 +91,26 @@ class IPageSettings(Interface):
             "widget": "vocabularyterms",
         },
     )
+
+    block_layouts = schema.JSONField(
+        title="Block Layouts",
+        description="Available layouts for page blocks",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={ 
+            "lid": PAGE_BLOCK_LAYOUTS_TAXONOMY,
+            "items": PAGE_BLOCK_LAYOUTS_DATA },
+        missing_value={"items": []},
+    )
+    
+    directives.widget(
+        "block_layouts",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+
 
 class IProductSettings(Interface)   : 
 
