@@ -4,8 +4,15 @@
              appId="glisco.vocabularies-controlpanel"
              category="Products"
              title="Vocabulary Settings"
-             visible="True"
-  >
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+
+  <configlet action_id="glisco.dummy-controlpanel"
+             appId="glisco.dummy-controlpanel"
+             category="Products"
+             title="Dummy Settings"
+             visible="True" >
     <permission>Manage portal</permission>
   </configlet>
 </object>

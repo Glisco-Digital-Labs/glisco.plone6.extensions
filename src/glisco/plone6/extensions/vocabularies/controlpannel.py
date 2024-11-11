@@ -2,7 +2,7 @@ from zope.component import adapter
 from zope.interface import Interface
 from plone.restapi.controlpanels import RegistryConfigletPanel
 
-from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings
+from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings, IDummySettings
 
 @adapter(Interface, Interface)
 class PageRegistryConfigletPanel(RegistryConfigletPanel):
@@ -13,4 +13,15 @@ class PageRegistryConfigletPanel(RegistryConfigletPanel):
     configlet_id = "glisco.vocabularies-controlpanel"
     configlet_category_id = "Products"
     title = "Vocabulary Settings"
+    group = "Products"
+
+@adapter(Interface, Interface)
+class DummyRegistryConfigletPanel(RegistryConfigletPanel):
+    """Volto control panel"""
+
+    schema = IDummySettings
+    schema_prefix = "glisco.dummy"
+    configlet_id = "glisco.dummy-controlpanel"
+    configlet_category_id = "Products"
+    title = "Dummy Settings"
     group = "Products"

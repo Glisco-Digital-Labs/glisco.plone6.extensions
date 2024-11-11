@@ -9,4 +9,9 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IPageSettings"
       prefix="glisco.vocabularies" />
 
+
+    <records
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IDummySettings"
+      prefix="glisco.dummy" />
+
 </registry>

@@ -13,6 +13,10 @@
         factory=".controlpannel.PageRegistryConfigletPanel"
         name="glisco.vocabularies-controlpanel" />
 
+    <adapter
+        factory=".controlpannel.DummyRegistryConfigletPanel"
+        name="glisco.dummy-controlpanel" />
+
     <utility
         name="glisco.vocabularies.market_segments"
         component=".utilities.MarketSegmentsVocabulary" />

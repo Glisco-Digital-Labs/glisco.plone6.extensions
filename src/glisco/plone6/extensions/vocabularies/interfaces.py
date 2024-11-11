@@ -46,7 +46,23 @@ from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPE
 from glisco.plone6.extensions.vocabularies.constants import \
      MARKET_SEGMENTS_TAXONOMY, PRODUCT_SEGMENTS_TAXONOMY, PRODUCT_TYPES_TAXONOMY, \
      PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY 
-   
+
+class IDummySettings(Interface)   : 
+    dummy_field = schema.JSONField(
+        title="Types of Page",
+        description="Available types of a page",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={"items": PAGE_TYPES_DATA },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "dummy_field",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
 class IPageSettings(Interface):
 
     types_of_page = schema.JSONField(
