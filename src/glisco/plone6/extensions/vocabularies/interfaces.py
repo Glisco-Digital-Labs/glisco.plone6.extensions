@@ -47,17 +47,25 @@ from glisco.plone6.extensions.vocabularies.constants import \
      MARKET_SEGMENTS_TAXONOMY, PRODUCT_SEGMENTS_TAXONOMY, PRODUCT_TYPES_TAXONOMY, \
      PRODUCT_MATERIALS_TAXONOMY, PRODUCTION_TECHNIQUES_TAXONOMY, TYPE_OF_PAGE_TAXONOMY 
 
-class IDummySettings(Interface)   : 
-    dummy_field = schema.JSONField(
-        title="Types of Page",
-        description="Available types of a page",
+class IMarketSettings(Interface)   : 
+
+    enable_market_tagging = schema.Bool(
+        title=_(u"Enable Market-based tagging of content"), 
+        required=False
+    )
+    
+    market_segments = schema.JSONField(
+        title="Market Segments",
+        description="Market Segments",
         required=False,
         schema=VOCABULARY_SCHEMA,
-        default={"items": PAGE_TYPES_DATA },
+        default={ 
+            "lid": MARKET_SEGMENTS_TAXONOMY,
+            "items": MARKET_SEGMENTS_DATA },
         missing_value={"items": []},
     )
     directives.widget(
-        "dummy_field",
+        "market_segments",
         frontendOptions={
             "widget": "vocabularyterms",
         },
@@ -82,22 +90,7 @@ class IPageSettings(Interface):
         },
     )
 
-    # market_segments = schema.JSONField(
-    #     title="Market Segments",
-    #     description="Market Segments",
-    #     required=False,
-    #     schema=VOCABULARY_SCHEMA,
-    #     default={ 
-    #         "lid": MARKET_SEGMENTS_TAXONOMY,
-    #         "items": MARKET_SEGMENTS_DATA },
-    #     missing_value={"items": []},
-    # )
-    # directives.widget(
-    #     "market_segments",
-    #     frontendOptions={
-    #         "widget": "vocabularyterms",
-    #     },
-    # )
+    
 
     # product_segments = schema.JSONField(
     #     title="Product Segments",

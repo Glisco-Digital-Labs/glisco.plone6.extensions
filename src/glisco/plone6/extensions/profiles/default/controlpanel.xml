@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="portal_controlpanel">
-  <configlet action_id="glisco.vocabularies-controlpanel"
-             appId="glisco.vocabularies-controlpanel"
+  <configlet action_id="glisco.page-controlpanel"
+             appId="glisco.page-controlpanel"
              category="Products"
-             title="Vocabulary Settings"
+             title="Page Settings"
              visible="True" >
     <permission>Manage portal</permission>
   </configlet>
 
-  <configlet action_id="glisco.dummy-controlpanel"
-             appId="glisco.dummy-controlpanel"
+  <configlet action_id="glisco.market-controlpanel"
+             appId="glisco.market-controlpanel"
              category="Products"
-             title="Dummy Settings"
+             title="Market Settings"
              visible="True" >
     <permission>Manage portal</permission>
   </configlet>

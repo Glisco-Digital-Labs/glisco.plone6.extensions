@@ -11,11 +11,11 @@
 
     <adapter
         factory=".controlpannel.PageRegistryConfigletPanel"
-        name="glisco.vocabularies-controlpanel" />
+        name="glisco.page-controlpanel" />
 
     <adapter
-        factory=".controlpannel.DummyRegistryConfigletPanel"
-        name="glisco.dummy-controlpanel" />
+        factory=".controlpannel.MarketRegistryConfigletPanel"
+        name="glisco.market-controlpanel" />
 
     <utility
         name="glisco.vocabularies.market_segments"

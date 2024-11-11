@@ -11,7 +11,7 @@
 
 
     <records
-      interface="glisco.plone6.extensions.vocabularies.interfaces.IDummySettings"
-      prefix="glisco.dummy" />
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IMarketSettings"
+      prefix="glisco.vocabularies" />
 
 </registry>
