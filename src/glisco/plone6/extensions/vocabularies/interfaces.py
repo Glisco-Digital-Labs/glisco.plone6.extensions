@@ -35,7 +35,7 @@ from zope.interface import Interface
 # Product Dimensions
 # Product Weight
 # Product Pricing
-
+from glisco.plone6.extensions import _
 from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.marketsegments import MARKET_SEGMENTS_DATA
