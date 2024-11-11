@@ -66,89 +66,89 @@ class IPageSettings(Interface):
         },
     )
 
-    market_segments = schema.JSONField(
-        title="Market Segments",
-        description="Market Segments",
-        required=False,
-        schema=VOCABULARY_SCHEMA,
-        default={ 
-            "lid": MARKET_SEGMENTS_TAXONOMY,
-            "items": MARKET_SEGMENTS_DATA },
-        missing_value={"items": []},
-    )
-    directives.widget(
-        "market_segments",
-        frontendOptions={
-            "widget": "vocabularyterms",
-        },
-    )
+    # market_segments = schema.JSONField(
+    #     title="Market Segments",
+    #     description="Market Segments",
+    #     required=False,
+    #     schema=VOCABULARY_SCHEMA,
+    #     default={ 
+    #         "lid": MARKET_SEGMENTS_TAXONOMY,
+    #         "items": MARKET_SEGMENTS_DATA },
+    #     missing_value={"items": []},
+    # )
+    # directives.widget(
+    #     "market_segments",
+    #     frontendOptions={
+    #         "widget": "vocabularyterms",
+    #     },
+    # )
 
-    product_segments = schema.JSONField(
-        title="Product Segments",
-        description="Product Segments",
-        required=False,
-        schema=VOCABULARY_SCHEMA,
-        default={ 
-            "lid": PRODUCT_SEGMENTS_TAXONOMY,
-            "items": PRODUCT_SEGMENTS_DATA },
-        missing_value={"items": []},
-    )
-    directives.widget(
-        "product_segments",
-        frontendOptions={
-            "widget": "vocabularyterms",
-        },
-    )
+    # product_segments = schema.JSONField(
+    #     title="Product Segments",
+    #     description="Product Segments",
+    #     required=False,
+    #     schema=VOCABULARY_SCHEMA,
+    #     default={ 
+    #         "lid": PRODUCT_SEGMENTS_TAXONOMY,
+    #         "items": PRODUCT_SEGMENTS_DATA },
+    #     missing_value={"items": []},
+    # )
+    # directives.widget(
+    #     "product_segments",
+    #     frontendOptions={
+    #         "widget": "vocabularyterms",
+    #     },
+    # )
 
-    product_types = schema.JSONField(
-        title="Product Types",
-        description="Product Types",
-        required=False,
-        schema=VOCABULARY_SCHEMA,
-        default={ 
-            "lid": PRODUCT_TYPES_TAXONOMY,
-            "items": PRODUCT_TYPES_DATA },
-        missing_value={"items": []},
-    )
-    directives.widget(
-        "product_types",
-        frontendOptions={
-            "widget": "vocabularyterms",
-        },
-    )
+    # product_types = schema.JSONField(
+    #     title="Product Types",
+    #     description="Product Types",
+    #     required=False,
+    #     schema=VOCABULARY_SCHEMA,
+    #     default={ 
+    #         "lid": PRODUCT_TYPES_TAXONOMY,
+    #         "items": PRODUCT_TYPES_DATA },
+    #     missing_value={"items": []},
+    # )
+    # directives.widget(
+    #     "product_types",
+    #     frontendOptions={
+    #         "widget": "vocabularyterms",
+    #     },
+    # )
 
 
-    product_materials = schema.JSONField(
-        title="Product Materials",
-        description="Product Materials",
-        required=False,
-        schema=VOCABULARY_SCHEMA,
-        default={ 
-            "lid": PRODUCT_MATERIALS_TAXONOMY,
-            "items": PRODUCT_MATERIALS_DATA },
-        missing_value={"items": []},
-    )
-    directives.widget(
-        "product_materials",
-        frontendOptions={
-            "widget": "vocabularyterms",
-        },
-    )
+    # product_materials = schema.JSONField(
+    #     title="Product Materials",
+    #     description="Product Materials",
+    #     required=False,
+    #     schema=VOCABULARY_SCHEMA,
+    #     default={ 
+    #         "lid": PRODUCT_MATERIALS_TAXONOMY,
+    #         "items": PRODUCT_MATERIALS_DATA },
+    #     missing_value={"items": []},
+    # )
+    # directives.widget(
+    #     "product_materials",
+    #     frontendOptions={
+    #         "widget": "vocabularyterms",
+    #     },
+    # )
 
-    production_techniques = schema.JSONField(
-        title="Production Techniques",
-        description="Production Techniques",
-        required=False,
-        schema=VOCABULARY_SCHEMA,
-        default={ 
-            "lid": PRODUCTION_TECHNIQUES_TAXONOMY,
-            "items": PRODUCTION_TECHNIQUES_DATA },
-        missing_value={"items": []},
-    )
-    directives.widget(
-        "production_techniques",
-        frontendOptions={
-            "widget": "vocabularyterms",
-        },
-    )
+    # production_techniques = schema.JSONField(
+    #     title="Production Techniques",
+    #     description="Production Techniques",
+    #     required=False,
+    #     schema=VOCABULARY_SCHEMA,
+    #     default={ 
+    #         "lid": PRODUCTION_TECHNIQUES_TAXONOMY,
+    #         "items": PRODUCTION_TECHNIQUES_DATA },
+    #     missing_value={"items": []},
+    # )
+    # directives.widget(
+    #     "production_techniques",
+    #     frontendOptions={
+    #         "widget": "vocabularyterms",
+    #     },
+    # )
 
