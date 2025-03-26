@@ -36,7 +36,8 @@ from zope.interface import Interface
 # Product Weight
 # Product Pricing
 from glisco.plone6.extensions import _
-from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA
+from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA 
+from glisco.plone6.extensions.vocabularies.data.css.defaults import ANIMATIONS_CSS, BASE_CSS, COMPONENTS_CSS, UTILITIES_CSS, VARIABLES_CSS
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.marketsegments import MARKET_SEGMENTS_DATA
 from glisco.plone6.extensions.vocabularies.data.productsegments import PRODUCT_SEGMENTS_DATA
@@ -182,3 +183,48 @@ class IProductSettings(Interface)   :
             "widget": "vocabularyterms",
         },
     )
+
+class IDesignSettings(Interface):
+
+    enable_css_customization = schema.Bool(
+        title=_(u"Enable CSS customization"), 
+        description=_(u"Enable CSS customization for the site"),
+        default=True,
+        required=False
+    )
+
+    variables = schema.SourceText(
+        title=_("CSS variables"),
+        description="Design token definitions for your color system, spacing, typography, and themes",
+        default=VARIABLES_CSS,
+        required=False,
+    )
+
+    base = schema.SourceText(
+        title=_("Base CSS"),
+        description="Global base styles and reset layer",
+        default=BASE_CSS,
+        required=False,
+    )
+
+    components = schema.SourceText(
+        title=_("Components CSS"),
+        description="Reusable, design-tokenized UI components",
+        default=COMPONENTS_CSS,
+        required=False,
+    )
+
+    animations = schema.SourceText(
+        title=_("Animations CSS"),
+        description="Keyframes and animation-related utility classes",
+        default=ANIMATIONS_CSS,
+        required=False,
+    )
+
+    utilities = schema.SourceText(
+        title=_("Utilities CSS"),
+        description="Utility classes for layout, spacing, and more",
+        default=UTILITIES_CSS,
+        required=False,
+    )
+    

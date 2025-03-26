@@ -8,7 +8,6 @@ PRODUCT_TYPES_TAXONOMY = "glisco.extensions.vocabularies.products.types"
 PRODUCT_MATERIALS_TAXONOMY = "glisco.extensions.vocabularies.products.materials"
 PRODUCTION_TECHNIQUES_TAXONOMY = "glisco.extensions.vocabularies.products.techniques"
 
-
 VOCABULARY_SCHEMA = json.dumps(
     {
         "type": "object",
@@ -32,3 +31,26 @@ VOCABULARY_SCHEMA = json.dumps(
         },
     }
 )
+
+# CSS_SCHEMA = json.dumps(
+#     {
+#         "type": "object",
+#         "properties": {
+#             "variables": {
+#                 "type": "string",
+#             },
+#             "base": {
+#                 "type": "string",
+#             },
+#             "components": {
+#                 "type": "string",
+#             }, 
+#             "animations": {
+#                 "type": "string",
+#             },
+#             "utilities": {
+#                 "type": "string",
+#             }
+#         },
+#     }
+# )

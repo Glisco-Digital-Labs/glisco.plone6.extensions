@@ -48,4 +48,8 @@
         factory=".controlpannel.ProductRegistryConfigletPanel"
         name="glisco.products-controlpanel" />
 
+    <adapter
+        factory=".controlpannel.DesignRegistryConfigletPanel"
+        name="glisco.design-controlpanel" />
+
 </configure>
