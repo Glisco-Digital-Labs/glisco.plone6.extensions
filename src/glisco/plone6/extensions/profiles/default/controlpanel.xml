@@ -2,7 +2,7 @@
 <object name="portal_controlpanel">
   <configlet action_id="glisco.page-controlpanel"
              appId="glisco.page-controlpanel"
-             category="Products"
+             category="Glisco Configurations"
              title="Page Settings"
              visible="True" >
     <permission>Manage portal</permission>
@@ -10,7 +10,7 @@
 
   <configlet action_id="glisco.market-controlpanel"
              appId="glisco.market-controlpanel"
-             category="Products"
+             category="Glisco Configurations"
              title="Market Settings"
              visible="True" >
     <permission>Manage portal</permission>
@@ -18,7 +18,7 @@
 
   <configlet action_id="glisco.products-controlpanel"
              appId="glisco.products-controlpanel"
-             category="Products"
+             category="Glisco Configurations"
              title="Products Settings"
              visible="True" >
     <permission>Manage portal</permission>
@@ -26,7 +26,7 @@
 
   <configlet action_id="glisco.design-controlpanel"
              appId="glisco.design-controlpanel"
-             category="Products"
+             category="Glisco Configurations"
              title="Design Settings"
              visible="True" >
     <permission>Manage portal</permission>

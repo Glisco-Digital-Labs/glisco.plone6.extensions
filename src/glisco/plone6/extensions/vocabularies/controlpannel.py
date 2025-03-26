@@ -11,9 +11,9 @@ class PageRegistryConfigletPanel(RegistryConfigletPanel):
     schema = IPageSettings
     schema_prefix = "glisco.extensions.settings.pages"
     configlet_id = "glisco.page-controlpanel"
-    configlet_category_id = "Products"
+    configlet_category_id = "Glisco Configurations"
     title = "Vocabulary Settings"
-    group = "Products"
+    group = "Glisco Configurations"
 
 @adapter(Interface, Interface)
 class MarketRegistryConfigletPanel(RegistryConfigletPanel):
@@ -22,9 +22,9 @@ class MarketRegistryConfigletPanel(RegistryConfigletPanel):
     schema = IMarketSettings
     schema_prefix = "glisco.extensions.settings.markets"
     configlet_id = "glisco.market-controlpanel"
-    configlet_category_id = "Products"
+    configlet_category_id = "Glisco Configurations"
     title = "Market Settings"
-    group = "Products"
+    group = "Glisco Configurations"
 
 @adapter(Interface, Interface)
 class ProductRegistryConfigletPanel(RegistryConfigletPanel):
@@ -33,9 +33,9 @@ class ProductRegistryConfigletPanel(RegistryConfigletPanel):
     schema = IProductSettings
     schema_prefix = "glisco.extensions.settings.products"
     configlet_id = "glisco.products-controlpanel"
-    configlet_category_id = "Products"
+    configlet_category_id = "Glisco Configurations"
     title = "Products Settings"
-    group = "Products"
+    group = "Glisco Configurations"
 
 @adapter(Interface, Interface)
 class DesignRegistryConfigletPanel(RegistryConfigletPanel):
@@ -46,4 +46,4 @@ class DesignRegistryConfigletPanel(RegistryConfigletPanel):
     configlet_id = "glisco.design-controlpanel"
     configlet_category_id = "Design"
     title = "Design Settings"
-    group = "Products"
+    group = "Glisco Configurations"
