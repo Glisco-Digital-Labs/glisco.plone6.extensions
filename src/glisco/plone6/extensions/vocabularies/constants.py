@@ -37,19 +37,19 @@ CSS_SCHEMA = json.dumps(
         "type": "object",
         "properties": {
             "variables": {
-                "type": "text",
+                "type": "string",
             },
             "base": {
-                "type": "text",
+                "type": "string",
             },
             "components": {
-                "type": "text",
+                "type": "string",
             }, 
             "animations": {
-                "type": "text",
+                "type": "string",
             },
             "utilities": {
-                "type": "text",
+                "type": "string",
             }
         },
     }
