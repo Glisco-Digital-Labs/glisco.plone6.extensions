@@ -186,54 +186,45 @@ class IProductSettings(Interface)   :
 
 class IDesignSettings(Interface):
 
-    variables = schema.SourceText(
-        title=_("CSS variables"),
-        description="Design token definitions for your color system, spacing, typography, and themes",
-        default=VARIABLES_CSS,
-        required=False,
+    enable_css_customization = schema.Bool(
+        title=_(u"Enable CSS customization"), 
+        description=_(u"Enable CSS customization for the site"),
+        default=True,
+        required=False
     )
 
-    base = schema.SourceText(
-        title=_("Base CSS"),
-        description="Global base styles and reset layer",
-        default=BASE_CSS,
-        required=False,
-    )
-
-    components = schema.SourceText(
-        title=_("Components CSS"),
-        description="Reusable, design-tokenized UI components",
-        default=COMPONENTS_CSS,
-        required=False,
-    )
-
-    animations = schema.SourceText(
-        title=_("Animations CSS"),
-        description="Keyframes and animation-related utility classes",
-        default=ANIMATIONS_CSS,
-        required=False,
-    )
-
-    utilities = schema.SourceText(
-        title=_("Utilities CSS"),
-        description="Utility classes for layout, spacing, and more",
-        default=UTILITIES_CSS,
-        required=False,
-    )
-    
-    # css_settings = schema.JSONField(
-    #     title="Site CSS Variables",
+    # variables = schema.SourceText(
+    #     title=_("CSS variables"),
     #     description="Design token definitions for your color system, spacing, typography, and themes",
+    #     default=VARIABLES_CSS,
     #     required=False,
-    #     schema=CSS_SCHEMA,
-    #     default=CSS_DATA,
     # )
 
-    # directives.widget(
-    #     "css_settings",
-    #     frontendOptions={
-    #         "widget": "textarea",
-    #     },
+    # base = schema.SourceText(
+    #     title=_("Base CSS"),
+    #     description="Global base styles and reset layer",
+    #     default=BASE_CSS,
+    #     required=False,
     # )
 
+    # components = schema.SourceText(
+    #     title=_("Components CSS"),
+    #     description="Reusable, design-tokenized UI components",
+    #     default=COMPONENTS_CSS,
+    #     required=False,
+    # )
+
+    # animations = schema.SourceText(
+    #     title=_("Animations CSS"),
+    #     description="Keyframes and animation-related utility classes",
+    #     default=ANIMATIONS_CSS,
+    #     required=False,
+    # )
+
+    # utilities = schema.SourceText(
+    #     title=_("Utilities CSS"),
+    #     description="Utility classes for layout, spacing, and more",
+    #     default=UTILITIES_CSS,
+    #     required=False,
+    # )
     
