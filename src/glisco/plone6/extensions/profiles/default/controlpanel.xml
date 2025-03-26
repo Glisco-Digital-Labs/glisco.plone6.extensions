@@ -23,4 +23,12 @@
              visible="True" >
     <permission>Manage portal</permission>
   </configlet>
+
+  <configlet action_id="glisco.design-controlpanel"
+             appId="glisco.design-controlpanel"
+             category="Products"
+             title="Design Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
 </object>
