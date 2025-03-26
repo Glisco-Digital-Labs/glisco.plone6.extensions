@@ -16,8 +16,8 @@ class CssView(BrowserView):
     def bundle(self):
         
         reg_record = api.portal.get_registry_record("glisco.extensions.settings.design.variables")
-        pprint("********************** CSS SETTINGS **********************")
-        pprint(reg_record)
+        pprint.pprint("********************** CSS SETTINGS **********************")
+        pprint.pprint(reg_record)
         return reg_record
     
     def __call__(self):
