@@ -194,4 +194,11 @@ class IDesignSettings(Interface):
         default=CSS_DATA,
     )
 
+    # directives.widget(
+    #     "css_settings",
+    #     frontendOptions={
+    #         "widget": "textarea",
+    #     },
+    # )
+
     
