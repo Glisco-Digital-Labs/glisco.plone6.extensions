@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_controlpanel">
+  <configlet action_id="glisco.page-controlpanel"
+             appId="glisco.page-controlpanel"
+             category="Products"
+             title="Page Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+
+  <configlet action_id="glisco.market-controlpanel"
+             appId="glisco.market-controlpanel"
+             category="Products"
+             title="Market Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+
+  <configlet action_id="glisco.products-controlpanel"
+             appId="glisco.products-controlpanel"
+             category="Products"
+             title="Products Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+</object>

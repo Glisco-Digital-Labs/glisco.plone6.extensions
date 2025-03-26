@@ -37,3 +37,4 @@ report.html
 reports/
 venv/
 # excludes
+glisco.plone6.extensions.code-workspace

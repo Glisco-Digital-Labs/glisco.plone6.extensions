@@ -87,3 +87,16 @@ black-enforce: commands[0]> black -v src setup.py
 git init is disabled!
 Generated file structure at /Users/joemedicis/Development/glisco/platform/plone6/glisco.plone6.extensions/glisco.plone6.extensions
 ```
+
+## Adding a vocabulary
+
+Using the same [plonecli docs][plonecli] as guide, we went on to do:
+
+```sh
+plonecli add vocabulary
+```
+
+We just followed the prompts to create a PageLayoutTypes taxonomy, 
+and the necessary ZCML and Python config was added, with placeholder code.
+
+[plonecli]: https://pypi.org/project/plonecli/

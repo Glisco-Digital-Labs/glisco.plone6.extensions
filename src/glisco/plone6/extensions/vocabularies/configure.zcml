@@ -1,0 +1,51 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="glisco.plone6.extensions">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <!-- -*- VOCABULARIES -*- -->
+
+    <utility   
+        name="glisco.extensions.vocabularies.pages.types"
+        component=".utilities.PageTypesVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.markets.segments"
+        component=".utilities.MarketSegmentsVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.products.segments"
+        component=".utilities.ProductSegmentsVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.products.types"
+        component=".utilities.ProductTypesVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.products.materials"
+        component=".utilities.ProductMaterialsVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.productions.techniques"
+        component=".utilities.ProductionTechniquesVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.pages.blocks.layouts"
+        component=".utilities.BlockLayoutTypesVocabulary" />
+
+    <!-- -*- CONFIGLETS -*- -->
+
+    <adapter
+        factory=".controlpannel.PageRegistryConfigletPanel"
+        name="glisco.page-controlpanel" />
+
+    <adapter
+        factory=".controlpannel.MarketRegistryConfigletPanel"
+        name="glisco.market-controlpanel" />
+
+    <adapter
+        factory=".controlpannel.ProductRegistryConfigletPanel"
+        name="glisco.products-controlpanel" />
+
+</configure>
