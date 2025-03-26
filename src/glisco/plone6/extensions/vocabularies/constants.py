@@ -32,25 +32,25 @@ VOCABULARY_SCHEMA = json.dumps(
     }
 )
 
-# CSS_SCHEMA = json.dumps(
-#     {
-#         "type": "object",
-#         "properties": {
-#             "variables": {
-#                 "type": "text",
-#             },
-#             "base": {
-#                 "type": "text",
-#             },
-#             "components": {
-#                 "type": "text",
-#             }, 
-#             "animations": {
-#                 "type": "text",
-#             },
-#             "utilities": {
-#                 "type": "text",
-#             }
-#         },
-#     }
-# )
+CSS_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "variables": {
+                "type": "text",
+            },
+            "base": {
+                "type": "text",
+            },
+            "components": {
+                "type": "text",
+            }, 
+            "animations": {
+                "type": "text",
+            },
+            "utilities": {
+                "type": "text",
+            }
+        },
+    }
+)

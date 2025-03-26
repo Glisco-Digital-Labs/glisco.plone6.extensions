@@ -36,8 +36,8 @@ from zope.interface import Interface
 # Product Weight
 # Product Pricing
 from glisco.plone6.extensions import _
-from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA
-from glisco.plone6.extensions.vocabularies.data.css.defaults import ANIMATIONS_CSS, BASE_CSS, COMPONENTS_CSS, VARIABLES_CSS
+from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA, CSS_SCHEMA
+from glisco.plone6.extensions.vocabularies.data.css.defaults import CSS_DATA
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.marketsegments import MARKET_SEGMENTS_DATA
 from glisco.plone6.extensions.vocabularies.data.productsegments import PRODUCT_SEGMENTS_DATA
@@ -186,43 +186,12 @@ class IProductSettings(Interface)   :
 
 class IDesignSettings(Interface):
     
-    css_variables = schema.JSONField(
+    css_settings = schema.JSONField(
         title="Site CSS Variables",
         description="Design token definitions for your color system, spacing, typography, and themes",
         required=False,
-        type="text",
-        default=VARIABLES_CSS,
+        schema=CSS_SCHEMA,
+        default=CSS_DATA,
     )
 
-    css_base = schema.JSONField(
-        title="Site CSS Base",
-        description="Global base styles and reset layer",
-        required=False,
-        type="text",
-        default=BASE_CSS,
-    )
-
-    css_components = schema.JSONField(
-        title="Site CSS Components",
-        description="Reusable, design-tokenized UI components",
-        required=False,
-        type="text",
-        default=COMPONENTS_CSS,
-    )
-
-    css_animations = schema.JSONField(
-        title="Site CSS Animations",
-        description="Keyframes and animation-related utility classes",
-        required=False,
-        type="text",
-        default=ANIMATIONS_CSS,
-    )
-
-    css_utilities = schema.JSONField(
-        title="Site CSS Utilities",
-        description="Utility classes for common design patterns",
-        required=False,
-        type="text",
-        default="",
-    )
-
+    
