@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="glisco.plone6.extensions">
+
+ <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+    name="site-css-bundle"
+    for="*"
+    class=".css_view.CssView"
+    permission="zope2.View"
+    layer="glisco.plone6.extensions.interfaces.IGliscoPlone6ExtensionsLayer"
+    />
+
+</configure>
