@@ -18,4 +18,8 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IProductSettings"
       prefix="glisco.extensions.settings.products" />
 
+    <records
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IDesignSettings"
+      prefix="glisco.extensions.settings.design" />
+
 </registry>
