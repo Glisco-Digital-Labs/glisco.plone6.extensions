@@ -1,5 +1,6 @@
 from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
 
+
 PAGE_TYPES_DATA = [
     {
         "token": TYPE_OF_PAGE_TAXONOMY + ".home",
@@ -8,7 +9,6 @@ PAGE_TYPES_DATA = [
             "pt": "Home Page",
         },
     },
-
     {
         "token": TYPE_OF_PAGE_TAXONOMY + ".section",
         "titles": {
@@ -16,7 +16,6 @@ PAGE_TYPES_DATA = [
             "pt": "Section Page",
         },
     },
-
     {
         "token": TYPE_OF_PAGE_TAXONOMY + ".product",
         "titles": {
@@ -24,7 +23,6 @@ PAGE_TYPES_DATA = [
             "pt": "Product/Service Page",
         },
     },
-
     {
         "token": TYPE_OF_PAGE_TAXONOMY + ".adlanding",
         "titles": {
@@ -32,5 +30,4 @@ PAGE_TYPES_DATA = [
             "pt": "Ad Landing Page",
         },
     },
-                
 ]

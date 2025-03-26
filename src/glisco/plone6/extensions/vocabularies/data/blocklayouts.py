@@ -1,5 +1,6 @@
 from glisco.plone6.extensions.vocabularies.constants import PAGE_BLOCK_LAYOUTS_TAXONOMY
 
+
 # {"id" : "baby", "value" : "baby", "title" : "Baby"},
 #         {"id" : "boy", "value" : "boy", "title" : "Boy"},
 #         {"id" : "girl", "value" : "girl", "title" : "Girl"},
@@ -16,7 +17,6 @@ PAGE_BLOCK_LAYOUTS_DATA = [
             "pt": "Hidden",
         },
     },
-
     {
         "token": PAGE_BLOCK_LAYOUTS_TAXONOMY + ".block",
         "titles": {
@@ -24,7 +24,6 @@ PAGE_BLOCK_LAYOUTS_DATA = [
             "pt": "Block",
         },
     },
-
     {
         "token": PAGE_BLOCK_LAYOUTS_TAXONOMY + ".flex",
         "titles": {
@@ -32,7 +31,6 @@ PAGE_BLOCK_LAYOUTS_DATA = [
             "pt": "Flex",
         },
     },
-
     {
         "token": PAGE_BLOCK_LAYOUTS_TAXONOMY + ".grid",
         "titles": {
@@ -40,5 +38,4 @@ PAGE_BLOCK_LAYOUTS_DATA = [
             "pt": "Grid",
         },
     },
-                
 ]

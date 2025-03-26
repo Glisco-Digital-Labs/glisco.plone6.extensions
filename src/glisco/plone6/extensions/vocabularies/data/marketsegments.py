@@ -1,5 +1,6 @@
 from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY
 
+
 # {"id" : "baby", "value" : "baby", "title" : "Baby"},
 #         {"id" : "boy", "value" : "boy", "title" : "Boy"},
 #         {"id" : "girl", "value" : "girl", "title" : "Girl"},
@@ -16,7 +17,6 @@ MARKET_SEGMENTS_DATA = [
             "pt": "Baby",
         },
     },
-
     {
         "token": MARKET_SEGMENTS_TAXONOMY + ".boy",
         "titles": {
@@ -24,7 +24,6 @@ MARKET_SEGMENTS_DATA = [
             "pt": "Boy",
         },
     },
-
     {
         "token": MARKET_SEGMENTS_TAXONOMY + ".girl",
         "titles": {
@@ -32,7 +31,6 @@ MARKET_SEGMENTS_DATA = [
             "pt": "Girl",
         },
     },
-
     {
         "token": MARKET_SEGMENTS_TAXONOMY + ".man",
         "titles": {
@@ -40,5 +38,4 @@ MARKET_SEGMENTS_DATA = [
             "pt": "Man",
         },
     },
-                
 ]
