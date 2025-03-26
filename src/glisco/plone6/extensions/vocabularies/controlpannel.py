@@ -1,8 +1,11 @@
+from glisco.plone6.extensions.vocabularies.interfaces import IDesignSettings
+from glisco.plone6.extensions.vocabularies.interfaces import IMarketSettings
+from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings
+from glisco.plone6.extensions.vocabularies.interfaces import IProductSettings
+from plone.restapi.controlpanels import RegistryConfigletPanel
 from zope.component import adapter
 from zope.interface import Interface
-from plone.restapi.controlpanels import RegistryConfigletPanel
 
-from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings, IMarketSettings, IProductSettings, IDesignSettings
 
 @adapter(Interface, Interface)
 class PageRegistryConfigletPanel(RegistryConfigletPanel):
@@ -15,6 +18,7 @@ class PageRegistryConfigletPanel(RegistryConfigletPanel):
     title = "Vocabulary Settings"
     group = "Glisco Configurations"
 
+
 @adapter(Interface, Interface)
 class MarketRegistryConfigletPanel(RegistryConfigletPanel):
     """Volto control panel"""
@@ -26,6 +30,7 @@ class MarketRegistryConfigletPanel(RegistryConfigletPanel):
     title = "Market Settings"
     group = "Glisco Configurations"
 
+
 @adapter(Interface, Interface)
 class ProductRegistryConfigletPanel(RegistryConfigletPanel):
     """Volto control panel"""
@@ -36,6 +41,7 @@ class ProductRegistryConfigletPanel(RegistryConfigletPanel):
     configlet_category_id = "Products"
     title = "Products Settings"
     group = "Glisco Configurations"
+
 
 @adapter(Interface, Interface)
 class DesignRegistryConfigletPanel(RegistryConfigletPanel):

@@ -1,5 +1,6 @@
 import json
 
+
 TYPE_OF_PAGE_TAXONOMY = "glisco.extensions.vocabularies.pages.types"
 PAGE_BLOCK_LAYOUTS_TAXONOMY = "glisco.extensions.vocabularies.pages.blocks.layouts"
 MARKET_SEGMENTS_TAXONOMY = "glisco.extensions.vocabularies.markets.segments"
@@ -44,7 +45,7 @@ VOCABULARY_SCHEMA = json.dumps(
 #             },
 #             "components": {
 #                 "type": "string",
-#             }, 
+#             },
 #             "animations": {
 #                 "type": "string",
 #             },

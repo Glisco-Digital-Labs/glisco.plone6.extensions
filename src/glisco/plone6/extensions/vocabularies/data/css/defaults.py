@@ -95,5 +95,5 @@ CSS_DATA = {
     "base": BASE_CSS,
     "components": COMPONENTS_CSS,
     "animations": ANIMATIONS_CSS,
-    "utilities": UTILITIES_CSS
+    "utilities": UTILITIES_CSS,
 }
