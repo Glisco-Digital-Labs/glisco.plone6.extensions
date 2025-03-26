@@ -193,12 +193,12 @@ class IDesignSettings(Interface):
         required=False
     )
 
-    # variables = schema.SourceText(
-    #     title=_("CSS variables"),
-    #     description="Design token definitions for your color system, spacing, typography, and themes",
-    #     default=VARIABLES_CSS,
-    #     required=False,
-    # )
+    variables = schema.SourceText(
+        title=_("CSS variables"),
+        description="Design token definitions for your color system, spacing, typography, and themes",
+        default=VARIABLES_CSS,
+        required=False,
+    )
 
     # base = schema.SourceText(
     #     title=_("Base CSS"),
