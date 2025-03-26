@@ -11,7 +11,7 @@
 # ###########################################################################
 
 VARIABLES_CSS = """
-/* 
+/* ************************************************************************ 
   variables.css
   --------------
   Design token definitions for your color system, spacing, typography, and themes.
@@ -22,12 +22,12 @@ VARIABLES_CSS = """
   - Global tokens for sizing, font stacks, etc.
 
   Used throughout Tailwind config and custom CSS.
-*/
+************************************************************************ */
 
 """
 
 BASE_CSS = """
-/* 
+/* ************************************************************************
   base.css
   --------
   Global base styles and reset layer.
@@ -37,12 +37,12 @@ BASE_CSS = """
   - Global typography and background defaults
 
   Import this early to establish baseline styling.
-*/
+************************************************************************ */
 
 """
 
 COMPONENTS_CSS = """
-/* 
+/* ************************************************************************
   components.css
   ---------------
   Reusable, design-tokenized UI components.
@@ -53,13 +53,13 @@ COMPONENTS_CSS = """
   - Styles tied to CSS variables for easy theming
 
   Extend this file with custom design system elements.
-*/
+************************************************************************ */
 
 """
 
 
 ANIMATIONS_CSS = """
-/* 
+/* ************************************************************************
   animations.css
   ---------------
   Keyframes and animation-related utility classes.
@@ -70,12 +70,12 @@ ANIMATIONS_CSS = """
   - Timing/easing helpers for motion design
 
   Keeps animation logic clean and separate from layout/components.
-*/
+************************************************************************ */
 
 """
 
 UTILITIES_CSS = """
-/* 
+/* ************************************************************************
   utilities.css
   ---------------
   Project-specific utility classes that complement Tailwind.
@@ -86,7 +86,7 @@ UTILITIES_CSS = """
   - Overflow, z-index, and shadow helpers
 
   Add here what doesn't make sense as a component or Tailwind plugin.
-*/
+************************************************************************ */
 
 """
 

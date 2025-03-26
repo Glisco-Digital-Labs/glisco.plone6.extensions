@@ -200,31 +200,31 @@ class IDesignSettings(Interface):
         required=False,
     )
 
-    # base = schema.SourceText(
-    #     title=_("Base CSS"),
-    #     description="Global base styles and reset layer",
-    #     default=BASE_CSS,
-    #     required=False,
-    # )
+    base = schema.SourceText(
+        title=_("Base CSS"),
+        description="Global base styles and reset layer",
+        default=BASE_CSS,
+        required=False,
+    )
 
-    # components = schema.SourceText(
-    #     title=_("Components CSS"),
-    #     description="Reusable, design-tokenized UI components",
-    #     default=COMPONENTS_CSS,
-    #     required=False,
-    # )
+    components = schema.SourceText(
+        title=_("Components CSS"),
+        description="Reusable, design-tokenized UI components",
+        default=COMPONENTS_CSS,
+        required=False,
+    )
 
-    # animations = schema.SourceText(
-    #     title=_("Animations CSS"),
-    #     description="Keyframes and animation-related utility classes",
-    #     default=ANIMATIONS_CSS,
-    #     required=False,
-    # )
+    animations = schema.SourceText(
+        title=_("Animations CSS"),
+        description="Keyframes and animation-related utility classes",
+        default=ANIMATIONS_CSS,
+        required=False,
+    )
 
-    # utilities = schema.SourceText(
-    #     title=_("Utilities CSS"),
-    #     description="Utility classes for layout, spacing, and more",
-    #     default=UTILITIES_CSS,
-    #     required=False,
-    # )
+    utilities = schema.SourceText(
+        title=_("Utilities CSS"),
+        description="Utility classes for layout, spacing, and more",
+        default=UTILITIES_CSS,
+        required=False,
+    )
     
