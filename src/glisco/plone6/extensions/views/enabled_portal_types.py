@@ -11,6 +11,10 @@ class IEnabledPortalTypes(Interface):
 
 @implementer(IEnabledPortalTypes)
 class EnabledPortalTypes(BrowserView):
+    def __init__(self, context, request):
+          self.context = context
+          self.request = request
+          
     def enabledPortalTypes(self):
         reg_record = api.portal.get_registry_record("glisco.extensions.settings.contenttypes")
         print("**************  EnabledPortalTypes  **************")
