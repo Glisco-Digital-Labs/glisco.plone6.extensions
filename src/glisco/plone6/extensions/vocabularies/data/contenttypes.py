@@ -1,3 +1,4 @@
+from zope.schema.interfaces import IBaseVocabulary
 # ###########################################################################
 #
 # CONTENT TYPE DEFAULTS
@@ -55,3 +56,38 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
 
 CONTENT_TYPES_DATA = [] + DEFAULT_PLONE_CONTENT_TYPES_DATA
 
+class IContentTypesVocabulary(IBaseVocabulary):
+
+    vocabulary_data = CONTENT_TYPES_DATA
+
+    def __contains__(self, token):
+        """Check if the vocabulary contains a specific token."""
+        return len([v for v in vocabulary_data if v["token"] == token]) >= 1
+
+    def getTerm(value):
+        """Return the ITerm object for the term 'value'.
+
+        If 'value' is not a valid term, this method raises LookupError.
+        """
+        for term in vocabulary_data:
+            if term["token"] == value:
+                return term["titles"]["en"]
+        raise LookupError(f"Term '{value}' not found in vocabulary.")
+    
+    def __iter__(self):
+        """Return an iterator over the vocabulary terms."""
+        for term in self.vocabulary_data:
+            yield term["titles"]["en"]
+
+    def __len__(self):
+        """Return the number of terms in the vocabulary."""
+        return len(self.vocabulary_data)
+    
+    def __getitem__(self, token):
+        """Return the term with the given token."""
+        for term in self.vocabulary_data:
+            if term["token"] == token:
+                return term["titles"]["en"]
+            
+        raise LookupError(f"Term '{token}' not found in vocabulary.")
+    
