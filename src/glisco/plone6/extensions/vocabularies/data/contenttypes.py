@@ -3,6 +3,7 @@ from zope.interface import provider
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary
 from plone.dexterity import utils
+from plone import api
 
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -63,8 +64,9 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
 ]
 
 
-def registeredContentTypes(context):
-    typeList = getToolByName(context, 'portal_types').listTypeInfo()
+def registeredContentTypes():
+    portal = api.portal.get()
+    typeList = getToolByName(portal, 'portal_types').listTypeInfo()
 
     terms = []
     for type in typeList:
