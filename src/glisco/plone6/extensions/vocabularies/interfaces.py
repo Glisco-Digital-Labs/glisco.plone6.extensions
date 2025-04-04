@@ -53,7 +53,6 @@ from glisco.plone6.extensions.vocabularies.data.css.defaults import VARIABLES_CS
 from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
-
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import (
     PRODUCTION_TECHNIQUES_DATA,
@@ -65,7 +64,6 @@ from glisco.plone6.extensions.vocabularies.data.productsegments import (
     PRODUCT_SEGMENTS_DATA,
 )
 from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPES_DATA
-
 from plone import schema
 from plone.autoform import directives
 from zope.interface import Interface
@@ -237,6 +235,7 @@ class IDesignSettings(Interface):
         required=False,
     )
 
+
 class IContentTypeSettings(Interface):
 
     # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
@@ -252,11 +251,9 @@ class IContentTypeSettings(Interface):
         title=_("Content Types Settings"),
         description="What content types are available on the site",
         value_type=schema.Choice(
-            title=_(u"Organiser"),
-            vocabulary='plone.app.vocabularies.PortalTypes',
+            title=_("Organiser"),
+            vocabulary="plone.app.vocabularies.PortalTypes",
             required=False,
         ),
         required=False,
     )
-
-    
