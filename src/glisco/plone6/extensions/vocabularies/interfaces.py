@@ -54,7 +54,7 @@ from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
 
-from glisco.plone6.extensions.vocabularies.data.contenttypes import registeredContentTypesVocabulary #CONTENT_TYPES_DATA, IContentTypesVocabulary
+from glisco.plone6.extensions.vocabularies.data.contenttypes import registeredContentTypes #CONTENT_TYPES_DATA, IContentTypesVocabulary
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import (
     PRODUCTION_TECHNIQUES_DATA,
@@ -255,7 +255,8 @@ class IContentTypeSettings(Interface):
         # default=CONTENT_TYPES_SETTNGS,
         value_type=schema.Choice(
             title=_(u"Organiser"),
-            vocabulary=registeredContentTypesVocabulary, #content_types,
+            # vocabulary=registeredContentTypesVocabulary, #content_types,
+            source=registeredContentTypes,
             required=False,
         ),
         required=False,

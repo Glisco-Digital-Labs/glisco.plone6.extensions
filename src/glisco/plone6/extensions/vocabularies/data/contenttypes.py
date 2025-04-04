@@ -63,14 +63,14 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
     },
 ]
 
-
-def registeredContentTypes():
+@provider(IContextSourceBinder)
+def registeredContentTypes(context):
 
     try:
         print ("registeredContentTypes called. Trying to get portal object.")
-        portal = api.portal.get()
+        # portal = api.portal.get()
         print ("Portal object available. Now getting portal_types tool to listTypeInfo.")
-        typeList = getToolByName(portal, 'portal_types').listTypeInfo()
+        typeList = getToolByName(context, 'portal_types').listTypeInfo()
 
         terms = []
         for type in typeList:
@@ -100,7 +100,7 @@ def registeredContentTypes():
             ]
         )
 
-registeredContentTypesVocabulary = registeredContentTypes()
+# registeredContentTypesVocabulary = registeredContentTypes()
 
 CONTENT_TYPES_DATA = [] + DEFAULT_PLONE_CONTENT_TYPES_DATA
 
