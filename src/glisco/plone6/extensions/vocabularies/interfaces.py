@@ -54,7 +54,7 @@ from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
 
-from glisco.plone6.extensions.vocabularies.data.contenttypes import content_types, registeredContentTypesVocabulary #CONTENT_TYPES_DATA, IContentTypesVocabulary
+from glisco.plone6.extensions.vocabularies.data.contenttypes import registeredContentTypesVocabulary #CONTENT_TYPES_DATA, IContentTypesVocabulary
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import (
     PRODUCTION_TECHNIQUES_DATA,
