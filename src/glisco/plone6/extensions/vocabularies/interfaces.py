@@ -54,7 +54,6 @@ from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
 
-from glisco.plone6.extensions.vocabularies.data.contenttypes import registeredContentTypes #CONTENT_TYPES_DATA, IContentTypesVocabulary
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import (
     PRODUCTION_TECHNIQUES_DATA,
@@ -252,12 +251,9 @@ class IContentTypeSettings(Interface):
     content_type_settings = schema.List(
         title=_("Content Types Settings"),
         description="What content types are available on the site",
-        # default=CONTENT_TYPES_SETTNGS,
         value_type=schema.Choice(
             title=_(u"Organiser"),
-            # vocabulary=registeredContentTypesVocabulary, #content_types,
             vocabulary='plone.app.vocabularies.PortalTypes',
-            # source=registeredContentTypes,
             required=False,
         ),
         required=False,
