@@ -1,4 +1,9 @@
-from zope.schema.interfaces import IBaseVocabulary
+from Products.CMFCore.utils import getToolByName
+from zope.interface import provider
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleVocabulary
+from plone.dexterity import utils
+
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -57,47 +62,37 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
     },
 ]
 
+
+def registeredContentTypes(context):
+    typeList = getToolByName(context, 'portal_types').listTypeInfo()
+
+    terms = []
+    for type in typeList:
+        dottedName = getattr(type, 'klass', None)
+
+        print("dottedName is ", dottedName, ".")
+        if dottedName is None:
+            continue
+
+        terms.append(
+            SimpleVocabulary.createTerm(
+                type.id,
+                type.title,
+                type.description
+            )
+        )
+
+    print("registeredContentTypes terms is ", terms)
+
+    return SimpleVocabulary(terms)
+
+registeredContentTypesVocabulary = registeredContentTypes()
+
 content_types = SimpleVocabulary(
     [
         SimpleTerm(value=v["token"], title=v["titles"]["en"]) for v in DEFAULT_PLONE_CONTENT_TYPES_DATA
-        # SimpleTerm(value=u'Bill', title=_(u'Bill')),
-        # SimpleTerm(value=u'Bob', title=_(u'Bob')),
-        # SimpleTerm(value=u'Jim', title=_(u'Jim'))
     ]
 )
 
 CONTENT_TYPES_DATA = [] + DEFAULT_PLONE_CONTENT_TYPES_DATA
 
-class IContentTypesVocabulary(IBaseVocabulary):
-
-    def __contains__(self, token):
-        """Check if the vocabulary contains a specific token."""
-        return len([v for v in CONTENT_TYPES_DATA if v["token"] == token]) >= 1
-
-    def getTerm(value):
-        """Return the ITerm object for the term 'value'.
-
-        If 'value' is not a valid term, this method raises LookupError.
-        """
-        for term in CONTENT_TYPES_DATA:
-            if term["token"] == value:
-                return term["titles"]["en"]
-        raise LookupError(f"Term '{value}' not found in vocabulary.")
-    
-    def __iter__(self):
-        """Return an iterator over the vocabulary terms."""
-        for term in self.CONTENT_TYPES_DATA:
-            yield term["titles"]["en"]
-
-    def __len__(self):
-        """Return the number of terms in the vocabulary."""
-        return len(self.CONTENT_TYPES_DATA)
-    
-    def __getitem__(self, token):
-        """Return the term with the given token."""
-        for term in self.CONTENT_TYPES_DATA:
-            if term["token"] == token:
-                return term["titles"]["en"]
-            
-        raise LookupError(f"Term '{token}' not found in vocabulary.")
-    
