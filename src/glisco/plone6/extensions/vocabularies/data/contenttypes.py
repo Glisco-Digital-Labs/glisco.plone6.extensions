@@ -67,7 +67,9 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
 def registeredContentTypes():
 
     try:
+        print ("registeredContentTypes called. Trying to get portal object.")
         portal = api.portal.get()
+        print ("Portal object available. Now getting portal_types tool to listTypeInfo.")
         typeList = getToolByName(portal, 'portal_types').listTypeInfo()
 
         terms = []
@@ -89,16 +91,16 @@ def registeredContentTypes():
         print("registeredContentTypes terms is ", terms)
 
         return SimpleVocabulary(terms)
-    except:
-        return SimpleVocabulary([])
+    except Exception as e:
+        print("Error in registeredContentTypes: ", e)
+        # Return emty vocabulary in case of error
+        return SimpleVocabulary(
+            [
+                SimpleTerm(value=v["token"], title=v["titles"]["en"]) for v in DEFAULT_PLONE_CONTENT_TYPES_DATA
+            ]
+        )
 
 registeredContentTypesVocabulary = registeredContentTypes()
-
-content_types = SimpleVocabulary(
-    [
-        SimpleTerm(value=v["token"], title=v["titles"]["en"]) for v in DEFAULT_PLONE_CONTENT_TYPES_DATA
-    ]
-)
 
 CONTENT_TYPES_DATA = [] + DEFAULT_PLONE_CONTENT_TYPES_DATA
 
