@@ -14,13 +14,18 @@ class EnabledPortalTypes(BrowserView):
     def __init__(self, context, request):
           self.context = context
           self.request = request
-          
+
     def enabledPortalTypes(self):
-        reg_record = api.portal.get_registry_record("glisco.extensions.settings.contenttypes")
-        print("**************  EnabledPortalTypes  **************")
-        print(reg_record)
-        print("************** /EnabledPortalTypes **************")
-        fields = ["content_type_settings"]
+        try:
+            
+          reg_record = api.portal.get_registry_record("glisco.extensions.settings.contenttypes.content_type_settings")
+          print("**************  EnabledPortalTypes  **************")
+          print(reg_record)
+          print("************** /EnabledPortalTypes **************")
+          fields = ["content_type_settings"]
+        except Exception as e:
+          print(e)
+           
         return """{dummy: "dummy"}"""
 
     def __call__(self):
