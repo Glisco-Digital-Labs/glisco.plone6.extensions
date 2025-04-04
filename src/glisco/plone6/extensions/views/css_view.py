@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from glisco.plone6.extensions.vocabularies.interfaces import IDesignSettings
 from plone import api
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
