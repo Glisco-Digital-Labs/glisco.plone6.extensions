@@ -256,7 +256,8 @@ class IContentTypeSettings(Interface):
         value_type=schema.Choice(
             title=_(u"Organiser"),
             # vocabulary=registeredContentTypesVocabulary, #content_types,
-            source=registeredContentTypes,
+            vocabulary='plone.app.vocabularies.PortalTypes',
+            # source=registeredContentTypes,
             required=False,
         ),
         required=False,
