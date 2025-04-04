@@ -1,4 +1,7 @@
 from zope.schema.interfaces import IBaseVocabulary
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
 # ###########################################################################
 #
 # CONTENT TYPE DEFAULTS
@@ -53,6 +56,15 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
         },
     },
 ]
+
+content_types = SimpleVocabulary(
+    [
+        SimpleTerm(value=v["token"], title=v["titles"]["en"]) for v in DEFAULT_PLONE_CONTENT_TYPES_DATA
+        # SimpleTerm(value=u'Bill', title=_(u'Bill')),
+        # SimpleTerm(value=u'Bob', title=_(u'Bob')),
+        # SimpleTerm(value=u'Jim', title=_(u'Jim'))
+    ]
+)
 
 CONTENT_TYPES_DATA = [] + DEFAULT_PLONE_CONTENT_TYPES_DATA
 
