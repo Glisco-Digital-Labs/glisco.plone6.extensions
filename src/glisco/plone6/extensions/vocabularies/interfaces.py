@@ -53,6 +53,8 @@ from glisco.plone6.extensions.vocabularies.data.css.defaults import VARIABLES_CS
 from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
+
+from glisco.plone6.extensions.vocabularies.data.contenttypes import CONTENT_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.pagetypes import PAGE_TYPES_DATA
 from glisco.plone6.extensions.vocabularies.data.productiontechniques import (
     PRODUCTION_TECHNIQUES_DATA,
@@ -64,6 +66,7 @@ from glisco.plone6.extensions.vocabularies.data.productsegments import (
     PRODUCT_SEGMENTS_DATA,
 )
 from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPES_DATA
+
 from plone import schema
 from plone.autoform import directives
 from zope.interface import Interface
@@ -234,3 +237,28 @@ class IDesignSettings(Interface):
         default=UTILITIES_CSS,
         required=False,
     )
+
+class IContentTypeSettings(Interface):
+
+    # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
+
+    enable_content_types_customization = schema.Bool(
+        title=_("Enable Content Types customization"),
+        description=_("Restricts content types to be used in the site"),
+        default=True,
+        required=False,
+    )
+
+    content_type_settings = schema.List(
+        title=_("Content Types Settings"),
+        description="What content types are available on the site",
+        # default=CONTENT_TYPES_SETTNGS,
+        value_type=schema.Choice(
+            title=_(u"Organiser"),
+            vocabulary=CONTENT_TYPES_DATA,
+            required=False,
+        ),
+        required=False,
+    )
+
+    

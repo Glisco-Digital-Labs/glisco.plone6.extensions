@@ -31,4 +31,12 @@
              visible="True" >
     <permission>Manage portal</permission>
   </configlet>
+
+  <configlet action_id="glisco.content-controlpanel"
+             appId="glisco.content-controlpanel"
+             category="Products"
+             title="Content Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
 </object>
