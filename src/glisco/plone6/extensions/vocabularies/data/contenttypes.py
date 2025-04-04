@@ -65,28 +65,32 @@ DEFAULT_PLONE_CONTENT_TYPES_DATA = [
 
 
 def registeredContentTypes():
-    portal = api.portal.get()
-    typeList = getToolByName(portal, 'portal_types').listTypeInfo()
 
-    terms = []
-    for type in typeList:
-        dottedName = getattr(type, 'klass', None)
+    try:
+        portal = api.portal.get()
+        typeList = getToolByName(portal, 'portal_types').listTypeInfo()
 
-        print("dottedName is ", dottedName, ".")
-        if dottedName is None:
-            continue
+        terms = []
+        for type in typeList:
+            dottedName = getattr(type, 'klass', None)
 
-        terms.append(
-            SimpleVocabulary.createTerm(
-                type.id,
-                type.title,
-                type.description
+            print("dottedName is ", dottedName, ".")
+            if dottedName is None:
+                continue
+
+            terms.append(
+                SimpleVocabulary.createTerm(
+                    type.id,
+                    type.title,
+                    type.description
+                )
             )
-        )
 
-    print("registeredContentTypes terms is ", terms)
+        print("registeredContentTypes terms is ", terms)
 
-    return SimpleVocabulary(terms)
+        return SimpleVocabulary(terms)
+    except:
+        return SimpleVocabulary([])
 
 registeredContentTypesVocabulary = registeredContentTypes()
 
