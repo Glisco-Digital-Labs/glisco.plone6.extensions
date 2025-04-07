@@ -16,11 +16,11 @@ class ThemeView(BrowserView):
         self.context = context
         self.request = request
 
-        
+
     def site_theme(self):
         
         dummy_theme = {
-            colors: {
+            "colors": {
                 "primary": "#ff0000",
                 "secondary": "#00ff00",
                 "tertiary": "#0000ff",
