@@ -234,3 +234,26 @@ class IDesignSettings(Interface):
         default=UTILITIES_CSS,
         required=False,
     )
+
+
+class IContentTypeSettings(Interface):
+
+    # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
+
+    enable_content_types_customization = schema.Bool(
+        title=_("Enable Content Types customization"),
+        description=_("Restricts content types to be used in the site"),
+        default=True,
+        required=False,
+    )
+
+    content_type_settings = schema.List(
+        title=_("Content Types Settings"),
+        description="What content types are available on the site",
+        value_type=schema.Choice(
+            title=_("Organiser"),
+            vocabulary="plone.app.vocabularies.PortalTypes",
+            required=False,
+        ),
+        required=False,
+    )

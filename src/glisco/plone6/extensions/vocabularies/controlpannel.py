@@ -1,3 +1,4 @@
+from glisco.plone6.extensions.vocabularies.interfaces import IContentTypeSettings
 from glisco.plone6.extensions.vocabularies.interfaces import IDesignSettings
 from glisco.plone6.extensions.vocabularies.interfaces import IMarketSettings
 from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings
@@ -52,4 +53,16 @@ class DesignRegistryConfigletPanel(RegistryConfigletPanel):
     configlet_id = "glisco.design-controlpanel"
     configlet_category_id = "Products"
     title = "Design Settings"
+    group = "Glisco Configurations"
+
+
+@adapter(Interface, Interface)
+class ContentTypesRegistryConfigletPanel(RegistryConfigletPanel):
+    """Volto control panel"""
+
+    schema = IContentTypeSettings
+    schema_prefix = "glisco.extensions.settings.contenttypes"
+    configlet_id = "glisco.content-controlpanel"
+    configlet_category_id = "Products"
+    title = "Content Type Settings"
     group = "Glisco Configurations"

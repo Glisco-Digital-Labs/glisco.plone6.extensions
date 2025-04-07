@@ -3,7 +3,9 @@ from glisco.plone6.extensions.vocabularies.constants import PAGE_BLOCK_LAYOUTS_T
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_MATERIALS_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_SEGMENTS_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_TYPES_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCTION_TECHNIQUES_TAXONOMY
+from glisco.plone6.extensions.vocabularies.constants import (
+    PRODUCTION_TECHNIQUES_TAXONOMY,
+)
 from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
 from plone import api
 from zope.interface import provider

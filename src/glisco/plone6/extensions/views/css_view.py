@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
+from plone import api
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
 from zope.interface import Interface
-from plone import api
-from glisco.plone6.extensions.vocabularies.interfaces import IDesignSettings
+
 
 class ICssView(Interface):
     """Marker Interface for ICssView"""
 
+
 @implementer(ICssView)
 class CssView(BrowserView):
-    
     def bundle(self):
         prefix = "glisco.extensions.settings.design"
         fields = ["variables", "base", "components", "animations", "utilities"]
@@ -32,16 +32,18 @@ class CssView(BrowserView):
                 bundle += reg_record
                 bundle += "\n\n"
             except:
-              bundle += """
+                bundle += """
               /* ************************************************************************
                 {field}.css ERROR
                 ---------------
                 Could not load {field}.css
               ************************************************************************ */
 
-              """.format(field=field)
-              bundle += "\n\n"
+              """.format(
+                    field=field
+                )
+                bundle += "\n\n"
         return bundle
-    
+
     def __call__(self):
         return self.bundle()

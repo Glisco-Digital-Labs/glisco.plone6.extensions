@@ -52,4 +52,9 @@
         factory=".controlpannel.DesignRegistryConfigletPanel"
         name="glisco.design-controlpanel" />
 
+     <adapter
+        factory=".controlpannel.ContentTypesRegistryConfigletPanel"
+        name="glisco.content-controlpanel" />
+
+
 </configure>

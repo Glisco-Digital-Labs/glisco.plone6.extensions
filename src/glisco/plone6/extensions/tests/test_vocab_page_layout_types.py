@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from glisco.plone6.extensions import _
-from glisco.plone6.extensions.testing import GLISCO_PLONE6_EXTENSIONS_INTEGRATION_TESTING
+from glisco.plone6.extensions.testing import (
+    GLISCO_PLONE6_EXTENSIONS_INTEGRATION_TESTING,
+)
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getUtility
