@@ -92,7 +92,45 @@ class ThemeView(BrowserView):
                     "small": "0.833rem"
                 }
             }, 
-            
+            "spacing" : {
+                # Neutral theme uses a balanced and versatile spacing system with default density and standard breakpoints.,
+                
+                # APPLIES TO:                
+                # Containers: for responsive layout and horizontal gutters,
+                # Text blocks: outer margins and inner paddings,
+                # Images and media: consistent whitespace around visual elements,
+                # Cards, buttons, forms: margin, padding, and gap utilities
+
+    
+                "baseUnit": 4, # Smallest building block in pixels. Used to derive all spacing values via scale.,
+
+                "density": "default", # Can be 'compact', 'default', or 'minimal'. Controls overall openness of the layout.,
+
+                "scale": [1, 2, 3, 4, 6, 8, 12, 16], # Each scale value is multiplied by baseUnit × density multiplier to yield spacing tokens.,
+
+                "gutters": { #Standard padding applied inside containers (horizontal) and between vertical layout sections (vertical).
+                    "horizontal": 24,
+                    "vertical": 32
+                },
+
+                "sectionSpacing": [40, 80, 120], # Vertical spacing rhythm between sections of the page (e.g., hero → features).,
+
+                "containerWidths": { # Max-widths for containers at different screen sizes. XS is fluid by default (null = 100%).
+                    "xs": None,
+                    "sm": 540,
+                    "md": 720,
+                    "lg": 960,
+                    "xl": 1140
+                },
+
+                "breakpoints": { # Defines media query thresholds for layout changes. Matches containerWidths.
+                    "xs": 0,
+                    "sm": 576,
+                    "md": 768,
+                    "lg": 992,
+                    "xl": 1200
+                },
+            }
         }
 
     def site_theme(self):
