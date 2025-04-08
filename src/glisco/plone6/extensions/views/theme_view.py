@@ -115,6 +115,19 @@ class ThemeView(BrowserView):
 
                 "sectionSpacing": [40, 80, 120], # Vertical spacing rhythm between sections of the page (e.g., hero → features).,
 
+                "headingSpacing": {
+                    "h1": "var(--space-8)",
+                    "h2": "var(--space-6)",
+                    "h3": "var(--space-4)",
+                    "h4": "var(--space-2)",
+                    "h5": "var(--space-1)",
+                }, # Vertical spacing between headings and their respective content blocks.,
+
+                "textSpacing": {
+                    "body": "var(--space-2)",
+                    "small": "var(--space-1)"
+                }, # Vertical spacing between text elements 
+
                 "containerWidths": { # Max-widths for containers at different screen sizes. XS is fluid by default (null = 100%).
                     "xs": None,
                     "sm": 540,
