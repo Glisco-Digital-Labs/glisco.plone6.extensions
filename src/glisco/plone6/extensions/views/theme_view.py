@@ -17,7 +17,7 @@ class ThemeView(BrowserView):
         self.request = request
 
     def neutral_theme(self):
-        return json.dumps({
+        return {
             "themeName": "Neutral Theme",
             "description": "Minimal theme config with HSL base colors and derived harmony",
             "mode": "light",
@@ -44,7 +44,7 @@ class ThemeView(BrowserView):
                 0.92,
                 0.97
             ]
-        })
+        }
 
     def site_theme(self):
         
