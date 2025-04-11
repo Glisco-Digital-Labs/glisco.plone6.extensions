@@ -354,7 +354,7 @@ class IThemeSettings(Interface):
         description="Visual Theme for the site",
         value_type=schema.Choice(
             title=_("Theme"),
-            vocabulary="glisco.extensions.vocabularies.test",
+            vocabulary="glisco.extensions.vocabularies.themes",
             required=False,
         ),
         required=False,

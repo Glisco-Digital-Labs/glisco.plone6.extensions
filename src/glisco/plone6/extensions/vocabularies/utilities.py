@@ -17,10 +17,12 @@ from glisco.plone6.extensions.vocabularies.constants import (
     IMAGE_MOOD_DESCRIPTORS_TAXONOMY,
     ILLUSTRATION_TYPES_TAXONOMY,
     PRODUCTION_TECHNIQUES_TAXONOMY,
-    THEMES_TAXONOMY,
-    SITE_ARCHETYPES_TAXONOMY,
-    TEST_TAXONOMY,
     TYPE_OF_PAGE_TAXONOMY
+)
+
+from glisco.plone6.extensions.vocabularies.data.themes import (
+    THEMES_DATA,
+    SITE_ARCHETYPES_DATA,
 )
 
 def loadVocabularyFromStaticData(data):
@@ -99,15 +101,9 @@ def IllustrationTypesVocabulary(context):
 
 @provider(IVocabularyFactory)
 def ThemesVocabulary(context):
-    return loadVocabularyFromStaticData(THEMES_TAXONOMY)
+    return loadVocabularyFromStaticData(THEMES_DATA)
 
 @provider(IVocabularyFactory)
 def SiteArchetypesVocabulary(context):
-    return loadVocabularyFromStaticData(SITE_ARCHETYPES_TAXONOMY)
+    return loadVocabularyFromStaticData(SITE_ARCHETYPES_DATA)
 
-@provider(IVocabularyFactory)
-def SiteTestVocabulary(context):
-    print("**** >>>>> Loading test vocabulary. Got:")
-    data = loadVocabularyFromStaticData(TEST_TAXONOMY)
-    print(data)
-    return data

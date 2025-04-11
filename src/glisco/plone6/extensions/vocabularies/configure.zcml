@@ -55,10 +55,6 @@
         component=".utilities.ThemesVocabulary" />
     
     <utility
-        name="glisco.extensions.vocabularies.test"
-        component=".utilities.SiteTestVocabulary" />
-    
-    <utility
         name="glisco.extensions.vocabularies.site.archetypes"
         component=".utilities.SiteArchetypesVocabulary" />
 

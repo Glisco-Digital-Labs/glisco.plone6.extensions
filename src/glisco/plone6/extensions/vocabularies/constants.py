@@ -14,7 +14,6 @@ IMAGE_TREATMENT_TAXONOMY = "glisco.extensions.vocabularies.imagery.treatments"
 IMAGE_MOOD_DESCRIPTORS_TAXONOMY = "glisco.extensions.vocabularies.imagery.mood.descriptors"
 THEMES_TAXONOMY = "glisco.extensions.vocabularies.themes"
 SITE_ARCHETYPES_TAXONOMY = "glisco.extensions.vocabularies.site.archetypes"
-TEST_TAXONOMY = "glisco.extensions.vocabularies.test"
 
 VOCABULARY_SCHEMA = json.dumps(
     {

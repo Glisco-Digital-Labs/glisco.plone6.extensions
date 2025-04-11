@@ -61,7 +61,7 @@ THEMES_DATA = [
 
 ]
 
-SITE_ARCHETYPES = [
+SITE_ARCHETYPES_DATA = [
     {
         "token": SITE_ARCHETYPES_TAXONOMY + ".catalog", # Catalog-Driven	Surface browsable product listings	Ecommerce, Real Estate, Marketplaces	Grid/List views, filters, product cards, featured picks, CTAs
         "titles": {
