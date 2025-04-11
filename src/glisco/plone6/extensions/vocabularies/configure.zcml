@@ -34,6 +34,22 @@
         name="glisco.extensions.vocabularies.pages.blocks.layouts"
         component=".utilities.BlockLayoutTypesVocabulary" />
 
+    <utility
+        name="glisco.extensions.vocabularies.imagery.photography.tones"
+        component=".utilities.PhotographyTonesVocabulary" />
+
+    <utility    
+        name="glisco.extensions.vocabularies.imagery.illustration.types"
+        component=".utilities.IllustIllustrationTypesVocabulary" />
+
+    <utility
+        name="glisco.extensions.vocabularies.imagery.mood.descriptors"
+        component=".utilities.ImageMoodDescriptorsVocabulary" />
+    
+    <utility
+        name="glisco.extensions.vocabularies.imagery.treatments"
+        component=".utilities.ImageTreatmentVocabulary" />
+
     <!-- -*- CONFIGLETS -*- -->
 
     <adapter

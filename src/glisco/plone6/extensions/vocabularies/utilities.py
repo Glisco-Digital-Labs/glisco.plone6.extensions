@@ -1,9 +1,13 @@
-from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PAGE_BLOCK_LAYOUTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_MATERIALS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_SEGMENTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_TYPES_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import (
+    MARKET_SEGMENTS_TAXONOMY,
+    PAGE_BLOCK_LAYOUTS_TAXONOMY,
+    PRODUCT_MATERIALS_TAXONOMY,
+    PRODUCT_SEGMENTS_TAXONOMY,
+    PRODUCT_TYPES_TAXONOMY,
+    PHOTOGRAPHY_TONES_TAXONOMY,
+    IMAGE_TREATMENT_TAXONOMY,
+    IMAGE_MOOD_DESCRIPTORS_TAXONOMY,
+    ILLUSTRATION_TYPES_TAXONOMY,
     PRODUCTION_TECHNIQUES_TAXONOMY,
 )
 from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
@@ -55,3 +59,19 @@ def ProductMaterialsVocabulary(context):
 @provider(IVocabularyFactory)
 def ProductionTechniquesVocabulary(context):
     return loadVocabulary(PRODUCTION_TECHNIQUES_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def PhotographyTonesVocabulary(context):
+    return loadVocabulary(PHOTOGRAPHY_TONES_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def ImageTreatmentVocabulary(context):
+    return loadVocabulary(IMAGE_TREATMENT_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def ImageMoodDescriptorsVocabulary(context):
+    return loadVocabulary(IMAGE_MOOD_DESCRIPTORS_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def IllustrationTypesVocabulary(context):
+    return loadVocabulary(ILLUSTRATION_TYPES_TAXONOMY)
