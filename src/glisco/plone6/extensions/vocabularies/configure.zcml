@@ -40,7 +40,7 @@
 
     <utility    
         name="glisco.extensions.vocabularies.imagery.illustration.types"
-        component=".utilities.IllustIllustrationTypesVocabulary" />
+        component=".utilities.IllustrationTypesVocabulary" />
 
     <utility
         name="glisco.extensions.vocabularies.imagery.mood.descriptors"
