@@ -1,9 +1,13 @@
-from glisco.plone6.extensions.vocabularies.interfaces import IContentTypeSettings
-from glisco.plone6.extensions.vocabularies.interfaces import IDesignSettings
-from glisco.plone6.extensions.vocabularies.interfaces import IMarketSettings
-from glisco.plone6.extensions.vocabularies.interfaces import IPageSettings
-from glisco.plone6.extensions.vocabularies.interfaces import IProductSettings
-from glisco.plone6.extensions.vocabularies.interfaces import IImagerySettings
+from glisco.plone6.extensions.vocabularies.interfaces import (
+    IContentTypeSettings,
+    IDesignSettings,
+    IImagerySettings,
+    IMarketSettings,
+    IPageSettings,
+    IProductSettings,
+    IThemeSettings,
+)
+
 from plone.restapi.controlpanels import RegistryConfigletPanel
 from zope.component import adapter
 from zope.interface import Interface
@@ -77,4 +81,15 @@ class ImageryRegistryConfigletPanel(RegistryConfigletPanel):
     configlet_id = "glisco.imagery-controlpanel"
     configlet_category_id = "Products"
     title = "Imagery Settings"
+    group = "Glisco Configurations"
+
+@adapter(Interface, Interface)
+class ThemeRegistryConfigletPanel(RegistryConfigletPanel):
+    """Volto control panel"""
+
+    schema = IThemeSettings
+    schema_prefix = "glisco.extensions.settings.theme"
+    configlet_id = "glisco.imagery-controlpanel"
+    configlet_category_id = "Products"
+    title = "Theme Settings"
     group = "Glisco Configurations"

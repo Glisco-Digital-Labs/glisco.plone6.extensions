@@ -12,6 +12,8 @@ PHOTOGRAPHY_TONES_TAXONOMY = "glisco.extensions.vocabularies.imagery.photography
 ILLUSTRATION_TYPES_TAXONOMY = "glisco.extensions.vocabularies.imagery.illustration.types"
 IMAGE_TREATMENT_TAXONOMY = "glisco.extensions.vocabularies.imagery.treatments"
 IMAGE_MOOD_DESCRIPTORS_TAXONOMY = "glisco.extensions.vocabularies.imagery.mood.descriptors"
+THEMES_TAXONOMY = "glisco.extensions.vocabularies.themes"
+SITE_ARCHETYPES_TAXONOMY = "glisco.extensions.vocabularies.site.archetypes"
 
 
 VOCABULARY_SCHEMA = json.dumps(

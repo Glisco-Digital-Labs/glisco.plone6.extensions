@@ -9,6 +9,8 @@ from glisco.plone6.extensions.vocabularies.constants import (
     IMAGE_MOOD_DESCRIPTORS_TAXONOMY,
     ILLUSTRATION_TYPES_TAXONOMY,
     PRODUCTION_TECHNIQUES_TAXONOMY,
+    THEMES_TAXONOMY,
+    SITE_ARCHETYPES_TAXONOMY,
 )
 from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
 from plone import api
@@ -75,3 +77,11 @@ def ImageMoodDescriptorsVocabulary(context):
 @provider(IVocabularyFactory)
 def IllustrationTypesVocabulary(context):
     return loadVocabulary(ILLUSTRATION_TYPES_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def ThemesVocabulary(context):
+    return loadVocabulary(THEMES_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def SiteArchetypesVocabulary(context):
+    return loadVocabulary(SITE_ARCHETYPES_TAXONOMY)

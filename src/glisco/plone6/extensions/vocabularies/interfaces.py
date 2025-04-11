@@ -332,3 +332,36 @@ class IImagerySettings(Interface):
             "widget": "vocabularyterms",
         },
     )
+
+class IThemeSettings(Interface):
+
+    # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
+
+    enable_theme_customization = schema.Bool(
+        title=_("Enable Theme Customization"),
+        description=_("Defines the theme for the site"),
+        default=True,
+        required=False,
+    )
+
+    theme = schema.List(
+        title=_("Site Theme"),
+        description="Visual Theme for the site",
+        value_type=schema.Choice(
+            title=_("Theme"),
+            vocabulary="glisco.extensions.vocabularies.themes",
+            required=False,
+        ),
+        required=False,
+    )
+
+    site_archetypes = schema.List(
+        title=_("Site Archetypes"),
+        description="Site Archetype",
+        value_type=schema.Choice(
+            title=_("Site Archetypes"),
+            vocabulary="glisco.extensions.vocabularies.site.archetypes",
+            required=False,
+        ),
+        required=False,
+    )

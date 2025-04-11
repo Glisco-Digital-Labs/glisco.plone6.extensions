@@ -49,6 +49,14 @@
     <utility
         name="glisco.extensions.vocabularies.imagery.treatments"
         component=".utilities.ImageTreatmentVocabulary" />
+    
+    <utility
+        name="glisco.extensions.vocabularies.themes"
+        component=".utilities.ThemesVocabulary" />
+    
+    <utility
+        name="glisco.extensions.vocabularies.site.archetypes"
+        component=".utilities.SiteArchetypesVocabulary" />
 
     <!-- -*- CONFIGLETS -*- -->
 
@@ -74,6 +82,10 @@
 
     <adapter
         factory=".controlpannel.ImageryRegistryConfigletPanel"
-        name="glisco.imagery-controlpanel" />    
+        name="glisco.imagery-controlpanel" />   
+
+    <adapter
+        factory=".controlpannel.ThemeRegistryConfigletPanel"
+        name="glisco.theme-controlpanel" />  
 
 </configure>

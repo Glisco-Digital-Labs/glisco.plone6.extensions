@@ -30,4 +30,8 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IImagerySettings"
       prefix="glisco.extensions.settings.imagery" />
 
+    <records
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
+      prefix="glisco.extensions.vocabularies.themes" />
+
 </registry>
