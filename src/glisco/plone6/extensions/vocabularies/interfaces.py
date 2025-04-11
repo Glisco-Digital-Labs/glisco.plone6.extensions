@@ -342,24 +342,21 @@ class IThemeSettings(Interface):
 
     # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
 
-    theme = schema.List(
+    theme = schema.Choice(
         title=_("Site Theme"),
         description="Visual Theme for the site",
-        value_type=schema.Choice(
-            title=_("Theme"),
-            vocabulary="glisco.extensions.vocabularies.themes",
-            required=False,
-        ),
+        vocabulary="glisco.extensions.vocabularies.themes",
+        # value_type=schema.Choice(
+        #     title=_("Theme"),
+        #     vocabulary="glisco.extensions.vocabularies.themes",
+        #     required=False,
+        # ),
         required=False,
     )
 
-    # site_archetypes = schema.List(
-    #     title=_("Site Archetypes"),
-    #     description="Site Archetype",
-    #     value_type=schema.Choice(
-    #         title=_("Site Archetypes"),
-    #         vocabulary=SITE_ARCHETYPES_TAXONOMY,
-    #         required=False,
-    #     ),
-    #     required=False,
-    # )
+    site_archetypes = schema.Choice(
+        title=_("Site Archetypes"),
+        description="Site Archetype",
+        vocabulary=SITE_ARCHETYPES_TAXONOMY,
+        required=False,
+    )
