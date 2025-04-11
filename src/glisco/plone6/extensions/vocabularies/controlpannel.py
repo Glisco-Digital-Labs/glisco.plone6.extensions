@@ -89,7 +89,7 @@ class ThemeRegistryConfigletPanel(RegistryConfigletPanel):
 
     schema = IThemeSettings
     schema_prefix = "glisco.extensions.settings.theme"
-    configlet_id = "glisco.imagery-controlpanel"
+    configlet_id = "glisco.theme-controlpanel"
     configlet_category_id = "Products"
     title = "Theme Settings"
     group = "Glisco Configurations"

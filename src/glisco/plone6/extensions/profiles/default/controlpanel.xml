@@ -48,4 +48,12 @@
     <permission>Manage portal</permission>
   </configlet>
 
+  <configlet action_id="glisco.theme-controlpanel"
+             appId="glisco.theme-controlpanel"
+             category="Products"
+             title="Theme Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+
 </object>
