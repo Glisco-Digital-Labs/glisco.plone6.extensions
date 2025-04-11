@@ -17,7 +17,7 @@ from glisco.plone6.extensions.vocabularies.constants import (
     IMAGE_MOOD_DESCRIPTORS_TAXONOMY,
     ILLUSTRATION_TYPES_TAXONOMY,
     PRODUCTION_TECHNIQUES_TAXONOMY,
-    TYPE_OF_PAGE_TAXONOMY
+    TYPE_OF_PAGE_TAXONOMY,
 )
 
 from glisco.plone6.extensions.vocabularies.data.themes import (

@@ -1,6 +1,7 @@
 from glisco.plone6.extensions.vocabularies.constants import (
     THEMES_TAXONOMY,
-    SITE_ARCHETYPES_TAXONOMY
+    SITE_ARCHETYPES_TAXONOMY,
+    SITE_BUSINESS_SECTORS_TAXONOMY,
 )
 
 THEMES_DATA = [
@@ -137,22 +138,22 @@ SITE_ARCHETYPES_DATA = [
 ]
 
 def business_sector_factory ():
-    sectors =  ["Ecommerce", "Real Estate", "Marketplaces", "Consulting", 
-                "B2B Services", "Agencies", "SaaS", "Online Services", 
-                "Courses", "Law", "Finance", "Advisory", "NGOs", "Health Clinics", 
-                "Member Orgs", "Events", "Education", "Conferences", "Campaigns", 
-                "Launches", "Creative Studios", "Architects", "Freelancers", 
-                "Wellness", "Clinics", "Coaching", "Larger businesses", 
-                "Layered Offerings"]
+    sectors =  ['Advisory', 'Agencies', 'Architects', 'B2B Services', 
+                'Campaigns', 'Clinics', 'Coaching', 'Conferences', 
+                'Consulting', 'Courses', 'Creative Studios', 'Ecommerce', 
+                'Education', 'Events', 'Finance', 'Freelancers', 
+                'Health Clinics', 'Larger businesses', 'Launches', 'Law', 
+                'Layered Offerings', 'Marketplaces', 'Member Orgs', 'NGOs', 
+                'Online Services', 'Real Estate', 'SaaS', 'Wellness']
     return [
         {
-            "token": SITE_ARCHETYPES_TAXONOMY + "." + item.lower(),
+            "token": SITE_BUSINESS_SECTORS_TAXONOMY + "." + item.lower(),
             "titles": {
                 "en": item,
                 "pt": item,
             },
         }
-        for item in sectors.sort()
+        for item in sectors
     ]
     
 SITE_BUSINESS_SECTORS_DATA = business_sector_factory()
