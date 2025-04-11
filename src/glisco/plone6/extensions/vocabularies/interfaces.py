@@ -349,24 +349,24 @@ class IThemeSettings(Interface):
         required=False,
     )
 
-    theme = schema.List(
-        title=_("Site Theme"),
-        description="Visual Theme for the site",
-        value_type=schema.Choice(
-            title=_("Theme"),
-            vocabulary=THEMES_TAXONOMY,
-            required=False,
-        ),
-        required=False,
-    )
+    # theme = schema.List(
+    #     title=_("Site Theme"),
+    #     description="Visual Theme for the site",
+    #     value_type=schema.Choice(
+    #         title=_("Theme"),
+    #         vocabulary=THEMES_TAXONOMY,
+    #         required=False,
+    #     ),
+    #     required=False,
+    # )
 
-    site_archetypes = schema.List(
-        title=_("Site Archetypes"),
-        description="Site Archetype",
-        value_type=schema.Choice(
-            title=_("Site Archetypes"),
-            vocabulary=SITE_ARCHETYPES_TAXONOMY,
-            required=False,
-        ),
-        required=False,
-    )
+    # site_archetypes = schema.List(
+    #     title=_("Site Archetypes"),
+    #     description="Site Archetype",
+    #     value_type=schema.Choice(
+    #         title=_("Site Archetypes"),
+    #         vocabulary=SITE_ARCHETYPES_TAXONOMY,
+    #         required=False,
+    #     ),
+    #     required=False,
+    # )
