@@ -26,7 +26,7 @@ from glisco.plone6.extensions.vocabularies.constants import (
 def loadVocabularyFromStaticData(data):
     lang = api.portal.get_current_language()
     for item in data:
-        print("item is ", lang, item["token"], item["titles"])
+        print("item is ", lang, item)
     return SimpleVocabulary.fromItems(
         [
             [
