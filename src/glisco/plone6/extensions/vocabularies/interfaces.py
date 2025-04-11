@@ -319,8 +319,8 @@ class IImagerySettings(Interface):
     )
 
     image_mood = schema.JSONField(
-        title="Image Treatment",
-        description="Image Treatment",
+        title="Image Moods",
+        description="Image Moods",
         required=False,
         schema=VOCABULARY_SCHEMA,
         default={"lid": IMAGE_MOOD_DESCRIPTORS_TAXONOMY, "items": IMAGE_MOOD_DESCRIPTORS_DATA},
