@@ -34,6 +34,10 @@
 from glisco.plone6.extensions import _
 from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PAGE_BLOCK_LAYOUTS_TAXONOMY
+from glisco.plone6.extensions.vocabularies.constants import PHOTOGRAPHY_TONES_TAXONOMY
+from glisco.plone6.extensions.vocabularies.constants import IMAGE_TREATMENT_TAXONOMY
+from glisco.plone6.extensions.vocabularies.constants import IMAGE_MOOD_DESCRIPTORS_TAXONOMY
+from glisco.plone6.extensions.vocabularies.constants import ILLUSTRATION_TYPES_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_MATERIALS_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_SEGMENTS_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import PRODUCT_TYPES_TAXONOMY
@@ -64,6 +68,14 @@ from glisco.plone6.extensions.vocabularies.data.productsegments import (
     PRODUCT_SEGMENTS_DATA,
 )
 from glisco.plone6.extensions.vocabularies.data.producttypes import PRODUCT_TYPES_DATA
+
+from glisco.plone6.extensions.vocabularies.data.imagery import (
+    PHOTOGRAPHY_TONES_DATA,
+    ILLUSTRATION_TYPES_TAXONOMY_DATA,
+    IMAGE_TREATMENT_TAXONOMY_DATA,   
+    IMAGE_MOOD_DESCRIPTORS_DATA,
+)
+
 from plone import schema
 from plone.autoform import directives
 from zope.interface import Interface
@@ -256,4 +268,67 @@ class IContentTypeSettings(Interface):
             required=False,
         ),
         required=False,
+    )
+
+
+class IImagerySettings(Interface):
+
+    photography_tones = schema.JSONField(
+        title="Fotography Tones",
+        description="Fotography Tones",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={"lid": PHOTOGRAPHY_TONES_TAXONOMY, "items": PHOTOGRAPHY_TONES_DATA},
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "photography_tones",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    illustration_types = schema.JSONField(
+        title="Illustration Types",
+        description="Illustration Types",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={"lid": ILLUSTRATION_TYPES_TAXONOMY, "items": ILLUSTRATION_TYPES_TAXONOMY_DATA},
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "illustration_types",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    image_treatment = schema.JSONField(
+        title="Image Treatment",
+        description="Image Treatment",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={"lid": IMAGE_TREATMENT_TAXONOMY, "items": IMAGE_TREATMENT_TAXONOMY_DATA},
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "image_treatment",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
+    image_mood = schema.JSONField(
+        title="Image Treatment",
+        description="Image Treatment",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={"lid": IMAGE_MOOD_DESCRIPTORS_TAXONOMY, "items": IMAGE_MOOD_DESCRIPTORS_DATA},
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "image_mood",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
     )

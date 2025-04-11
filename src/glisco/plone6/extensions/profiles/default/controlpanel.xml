@@ -39,4 +39,13 @@
              visible="True" >
     <permission>Manage portal</permission>
   </configlet>
+
+  <configlet action_id="glisco.imagery-controlpanel"
+             appId="glisco.imagery-controlpanel"
+             category="Products"
+             title="Imagery Settings"
+             visible="True" >
+    <permission>Manage portal</permission>
+  </configlet>
+
 </object>

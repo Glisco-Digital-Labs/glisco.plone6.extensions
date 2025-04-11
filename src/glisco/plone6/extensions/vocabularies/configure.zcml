@@ -56,5 +56,8 @@
         factory=".controlpannel.ContentTypesRegistryConfigletPanel"
         name="glisco.content-controlpanel" />
 
+    <adapter
+        factory=".controlpannel.ImageryRegistryConfigletPanel"
+        name="glisco.imagery-controlpanel" />    
 
 </configure>

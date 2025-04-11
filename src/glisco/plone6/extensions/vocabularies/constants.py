@@ -8,6 +8,11 @@ PRODUCT_SEGMENTS_TAXONOMY = "glisco.extensions.vocabularies.products.segments"
 PRODUCT_TYPES_TAXONOMY = "glisco.extensions.vocabularies.products.types"
 PRODUCT_MATERIALS_TAXONOMY = "glisco.extensions.vocabularies.products.materials"
 PRODUCTION_TECHNIQUES_TAXONOMY = "glisco.extensions.vocabularies.products.techniques"
+PHOTOGRAPHY_TONES_TAXONOMY = "glisco.extensions.vocabularies.imagery.photography.tones"
+ILLUSTRATION_TYPES_TAXONOMY = "glisco.extensions.vocabularies.imagery.illustration.types"
+IMAGE_TREATMENT_TAXONOMY = "glisco.extensions.vocabularies.imagery.treatments"
+IMAGE_MOOD_DESCRIPTORS_TAXONOMY = "glisco.extensions.vocabularies.imagery.mood.descriptors"
+
 
 VOCABULARY_SCHEMA = json.dumps(
     {
