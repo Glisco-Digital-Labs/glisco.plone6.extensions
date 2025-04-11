@@ -80,7 +80,7 @@ def IllustrationTypesVocabulary(context):
 
 @provider(IVocabularyFactory)
 def ThemesVocabulary(context):
-    return loadVocabulary(THEMES_TAXONOMY)
+    return loadVocabulary(ILLUSTRATION_TYPES_TAXONOMY)
 
 @provider(IVocabularyFactory)
 def SiteArchetypesVocabulary(context):
