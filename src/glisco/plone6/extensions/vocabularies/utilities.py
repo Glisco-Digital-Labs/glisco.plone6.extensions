@@ -1,3 +1,8 @@
+from plone import api
+from zope.interface import provider
+from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.vocabulary import SimpleVocabulary
+
 from glisco.plone6.extensions.vocabularies.constants import (
     MARKET_SEGMENTS_TAXONOMY,
     PAGE_BLOCK_LAYOUTS_TAXONOMY,
@@ -11,13 +16,9 @@ from glisco.plone6.extensions.vocabularies.constants import (
     PRODUCTION_TECHNIQUES_TAXONOMY,
     THEMES_TAXONOMY,
     SITE_ARCHETYPES_TAXONOMY,
+    TEST_TAXONOMY,
+    TYPE_OF_PAGE_TAXONOMY
 )
-from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
-from plone import api
-from zope.interface import provider
-from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleVocabulary
-
 
 def loadVocabulary(name):
     registry_record_value = api.portal.get_registry_record(name)
@@ -80,8 +81,15 @@ def IllustrationTypesVocabulary(context):
 
 @provider(IVocabularyFactory)
 def ThemesVocabulary(context):
-    return loadVocabulary(ILLUSTRATION_TYPES_TAXONOMY)
+    return loadVocabulary(THEMES_TAXONOMY)
 
 @provider(IVocabularyFactory)
 def SiteArchetypesVocabulary(context):
     return loadVocabulary(SITE_ARCHETYPES_TAXONOMY)
+
+@provider(IVocabularyFactory)
+def SiteTestVocabulary(context):
+    print("**** >>>>> Loading test vocabulary. Got:")
+    data = loadVocabulary(TEST_TAXONOMY)
+    print(data)
+    return data

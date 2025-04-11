@@ -30,13 +30,17 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IImagerySettings"
       prefix="glisco.extensions.settings.imagery" />
 
-    <records remove='true' 
+    <!-- <records remove='true' 
       interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
       prefix="glisco.extensions.settings.theme" />
 
     <records remove='true' 
       interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
-      prefix="glisco.extensions.settings.themes" />
+      prefix="glisco.extensions.settings.themes" /> -->
+    
+    <records 
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
+      prefix="glisco.extensions.settings.testing" />
         
 
 </registry>
