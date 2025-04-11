@@ -26,4 +26,8 @@
       interface="glisco.plone6.extensions.vocabularies.interfaces.IContentTypeSettings"
       prefix="glisco.extensions.settings.contenttypes" />
 
+    <records
+      interface="glisco.plone6.extensions.vocabularies.interfaces.IImagerySettings"
+      prefix="glisco.extensions.settings.imagery" />
+
 </registry>
