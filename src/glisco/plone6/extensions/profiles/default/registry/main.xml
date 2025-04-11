@@ -40,7 +40,7 @@
     
     <records 
       interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
-      prefix="glisco.extensions.settings.testing" />
+      prefix="glisco.extensions.settings.theme" />
         
 
 </registry>

@@ -342,13 +342,6 @@ class IThemeSettings(Interface):
 
     # https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html
 
-    enable_theme_customization = schema.Bool(
-        title=_("Enable Theme Customization"),
-        description=_("Defines the theme for the site"),
-        default=True,
-        required=False,
-    )
-
     theme = schema.List(
         title=_("Site Theme"),
         description="Visual Theme for the site",
