@@ -135,3 +135,24 @@ SITE_ARCHETYPES_DATA = [
     },
 
 ]
+
+def business_sector_factory ():
+    sectors =  ["Ecommerce", "Real Estate", "Marketplaces", "Consulting", 
+                "B2B Services", "Agencies", "SaaS", "Online Services", 
+                "Courses", "Law", "Finance", "Advisory", "NGOs", "Health Clinics", 
+                "Member Orgs", "Events", "Education", "Conferences", "Campaigns", 
+                "Launches", "Creative Studios", "Architects", "Freelancers", 
+                "Wellness", "Clinics", "Coaching", "Larger businesses", 
+                "Layered Offerings"]
+    return [
+        {
+            "token": SITE_ARCHETYPES_TAXONOMY + "." + item.lower(),
+            "titles": {
+                "en": item,
+                "pt": item,
+            },
+        }
+        for item in sectors.sort()
+    ]
+    
+SITE_BUSINESS_SECTORS_DATA = business_sector_factory()

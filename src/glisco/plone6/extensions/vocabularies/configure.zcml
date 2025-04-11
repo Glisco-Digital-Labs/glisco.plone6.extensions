@@ -57,6 +57,10 @@
     <utility
         name="glisco.extensions.vocabularies.site.archetypes"
         component=".utilities.SiteArchetypesVocabulary" />
+    
+    <utility
+        name="glisco.extensions.vocabularies.site.business.sectors"
+        component=".utilities.SiteBusinessSectorsVocabulary" />
 
     <!-- -*- CONFIGLETS -*- -->
 

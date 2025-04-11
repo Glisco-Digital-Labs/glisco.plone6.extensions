@@ -360,3 +360,14 @@ class IThemeSettings(Interface):
         vocabulary=SITE_ARCHETYPES_TAXONOMY,
         required=False,
     )
+
+    sectors = schema.List(
+        title=_("Business Sectors"),
+        description="Site's Business Sectors",
+        value_type=schema.Choice(
+            title=_("Theme"),
+            vocabulary="glisco.extensions.vocabularies.site.business.sectors",
+            required=False,
+        ),
+        required=False,
+    )

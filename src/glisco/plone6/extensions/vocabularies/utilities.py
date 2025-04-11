@@ -23,12 +23,11 @@ from glisco.plone6.extensions.vocabularies.constants import (
 from glisco.plone6.extensions.vocabularies.data.themes import (
     THEMES_DATA,
     SITE_ARCHETYPES_DATA,
+    SITE_BUSINESS_SECTORS_DATA
 )
 
 def loadVocabularyFromStaticData(data):
     lang = api.portal.get_current_language()
-    for item in data:
-        print("item is ", lang, item)
     return SimpleVocabulary.fromItems(
         [
             [
@@ -107,3 +106,6 @@ def ThemesVocabulary(context):
 def SiteArchetypesVocabulary(context):
     return loadVocabularyFromStaticData(SITE_ARCHETYPES_DATA)
 
+@provider(IVocabularyFactory)
+def SiteBusinessSectorsVocabulary(context):
+    return loadVocabularyFromStaticData(SITE_BUSINESS_SECTORS_DATA)
