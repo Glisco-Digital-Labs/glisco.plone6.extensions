@@ -32,28 +32,33 @@
 # Product Weight
 # Product Pricing
 from glisco.plone6.extensions import _
-from glisco.plone6.extensions.vocabularies.constants import MARKET_SEGMENTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PAGE_BLOCK_LAYOUTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PHOTOGRAPHY_TONES_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import IMAGE_TREATMENT_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import IMAGE_MOOD_DESCRIPTORS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import ILLUSTRATION_TYPES_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_MATERIALS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_SEGMENTS_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import PRODUCT_TYPES_TAXONOMY
 from glisco.plone6.extensions.vocabularies.constants import (
+    MARKET_SEGMENTS_TAXONOMY,
+    PAGE_BLOCK_LAYOUTS_TAXONOMY,
+    PHOTOGRAPHY_TONES_TAXONOMY, 
+    IMAGE_TREATMENT_TAXONOMY, 
+    IMAGE_MOOD_DESCRIPTORS_TAXONOMY,
+    ILLUSTRATION_TYPES_TAXONOMY,
+    PRODUCT_MATERIALS_TAXONOMY,
+    PRODUCT_SEGMENTS_TAXONOMY,
+    PRODUCT_TYPES_TAXONOMY,
     PRODUCTION_TECHNIQUES_TAXONOMY,
+    TYPE_OF_PAGE_TAXONOMY,
+    VOCABULARY_SCHEMA,
+    THEMES_TAXONOMY,
+    SITE_ARCHETYPES_TAXONOMY,
 )
-from glisco.plone6.extensions.vocabularies.constants import TYPE_OF_PAGE_TAXONOMY
-from glisco.plone6.extensions.vocabularies.constants import VOCABULARY_SCHEMA
+
 from glisco.plone6.extensions.vocabularies.data.blocklayouts import (
     PAGE_BLOCK_LAYOUTS_DATA,
 )
-from glisco.plone6.extensions.vocabularies.data.css.defaults import ANIMATIONS_CSS
-from glisco.plone6.extensions.vocabularies.data.css.defaults import BASE_CSS
-from glisco.plone6.extensions.vocabularies.data.css.defaults import COMPONENTS_CSS
-from glisco.plone6.extensions.vocabularies.data.css.defaults import UTILITIES_CSS
-from glisco.plone6.extensions.vocabularies.data.css.defaults import VARIABLES_CSS
+from glisco.plone6.extensions.vocabularies.data.css.defaults import (
+    ANIMATIONS_CSS,
+    BASE_CSS,
+    COMPONENTS_CSS,
+    UTILITIES_CSS,
+    VARIABLES_CSS
+)
 from glisco.plone6.extensions.vocabularies.data.marketsegments import (
     MARKET_SEGMENTS_DATA,
 )
@@ -349,7 +354,7 @@ class IThemeSettings(Interface):
         description="Visual Theme for the site",
         value_type=schema.Choice(
             title=_("Theme"),
-            vocabulary="glisco.extensions.vocabularies.themes",
+            vocabulary=THEMES_TAXONOMY,
             required=False,
         ),
         required=False,
@@ -360,7 +365,7 @@ class IThemeSettings(Interface):
         description="Site Archetype",
         value_type=schema.Choice(
             title=_("Site Archetypes"),
-            vocabulary="glisco.extensions.vocabularies.site.archetypes",
+            vocabulary=SITE_ARCHETYPES_TAXONOMY,
             required=False,
         ),
         required=False,

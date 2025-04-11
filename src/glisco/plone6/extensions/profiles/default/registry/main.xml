@@ -32,7 +32,7 @@
 
     <records
       interface="glisco.plone6.extensions.vocabularies.interfaces.IThemeSettings"
-      prefix="glisco.extensions.vocabularies.themes" />
+      prefix="glisco.extensions.settings.theme" />
     
 
 </registry>
