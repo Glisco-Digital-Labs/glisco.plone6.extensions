@@ -51,7 +51,6 @@ class ThemeView(BrowserView):
         try:
             # print("****** >>> getting config from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
-            # print("****** >>> config is ", config)
             return json.dumps(config)
         except KeyError:
             return None
@@ -192,6 +191,8 @@ class ThemeView(BrowserView):
             default_theme_file = theme_name.split(".")[-1] + ".json"
             default_theme = self.get_config_from_file(default_theme_file)
             custom_theme = self.get_custom_theme()
+            print("****** >>> custom_theme is ", custom_theme)
+            print("****** >>> type of custom_theme is ", type(custom_theme))
             if custom_theme:
                 return json.dumps(json.loads(custom_theme))
             else:
