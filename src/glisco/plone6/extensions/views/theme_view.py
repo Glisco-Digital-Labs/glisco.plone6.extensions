@@ -51,7 +51,8 @@ class ThemeView(BrowserView):
         try:
             # print("****** >>> getting config from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
-            return json.dumps(config)
+            print("****** >>> config ", config.trim())
+            return json.dumps(config.trim())
         except KeyError:
             return None
         
