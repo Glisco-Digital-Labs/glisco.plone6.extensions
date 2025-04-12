@@ -36,9 +36,9 @@ class ThemeView(BrowserView):
         prefix = "glisco.extensions.settings.theme"
         field = "theme"
         try:
-            print("****** >>> getting theme name from ", prefix + "." + field)
+            # print("****** >>> getting theme name from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
-            print("****** >>> theme name is ", config)
+            # print("****** >>> theme name is ", config)
             return config
         except KeyError:
             return None
@@ -49,17 +49,17 @@ class ThemeView(BrowserView):
         prefix = "glisco.extensions.settings.theme"
         field = "design_configuration"
         try:
-            print("****** >>> getting config from ", prefix + "." + field)
+            # print("****** >>> getting config from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
-            print("****** >>> config is ", config)
+            # print("****** >>> config is ", config)
             return json.dumps(config)
         except KeyError:
             return None
         
-    def neutral_theme(self):
+    def exception_theme(self):
         return {
-            "themeName": "Neutral Theme",
-            "description": "Minimal theme config with HSL base colors and derived harmony",
+            "themeName": "Exception Theme",
+            "description": "Error in @@site-theme. Please check the console for more details.",
             "colors": {
                 "mode": "light",
                 "baseColors": {
@@ -186,13 +186,18 @@ class ThemeView(BrowserView):
             }
         }
 
-    def site_theme(self):
-        theme_name = self.get_theme_name()
-        default_theme_file = theme_name.split(".")[-1] + ".json"
-        default_theme = self.get_config_from_file(default_theme_file)
-        custom_theme = self.get_custom_theme()
-        print("********* site_theme >>> default_theme: ", default_theme, " >>>> custom:: ", custom_theme)
-        return json.dumps(self.neutral_theme())
-
     def __call__(self):
-        return self.site_theme()
+        try:
+            theme_name = self.get_theme_name()
+            default_theme_file = theme_name.split(".")[-1] + ".json"
+            default_theme = self.get_config_from_file(default_theme_file)
+            custom_theme = self.get_custom_theme()
+            if custom_theme:
+                return json.dumps(json.loads(custom_theme))
+            else:
+                # If no custom theme is set, return the default theme
+                return json.dumps(json.loads(default_theme))
+
+        except Exception as e:
+            print("Error in ThemeView:", e)
+            return json.dumps(self.exception_theme())
