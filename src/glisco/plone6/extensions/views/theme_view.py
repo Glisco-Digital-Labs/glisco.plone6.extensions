@@ -18,26 +18,33 @@ class ThemeView(BrowserView):
 
     def get_config_from_file(self, filename):
         """Get configuration from a JSON file."""
-        this_path = "/".join(__file__.split("/")[:-2])
-        relative_path = "/".join(__file__.split("/")[:-2]) + "/path/to/your/folder/" + filename
-        print("********* >>> ", this_path, " >>>> ", relative_path)
+        theme_config_path = "/".join(__file__.split("/")[:-2]) + "/themes/data/" + filename
+        print("********* >>> ", this_path, " >>>> ", theme_config_path)
 
-        # with open(filename, "r") as file:
-        #     this_path = "/".join(__file__.split("/")[:-2])
-        #     relative_path = "/".join(__file__.split("/")[:-2]) + "/path/to/your/folder/" + filename
-        #     print("********* >>> ", this_path, " >>>> ", relative_path)
-            # with open(relative_path, "r") as file:
-            #     return json.load(file)
-        # Assuming the file contains a JSON object
-
+        with open(theme_config_path, "r") as file:
+            return json.load(file)
+    
     def get_registry_record(self, name):
         """Get a registry record by name."""
         try:
             return api.portal.get_registry_record(name)
         except KeyError:
             return None
+    
+    def get_theme_name(self):
+        """Get a theme by name."""
+        prefix = "glisco.extensions.settings.theme"
+        field = "theme"
+        try:
+            print("****** >>> getting theme name from ", prefix + "." + field)
+            config = api.portal.get_registry_record(prefix + "." + field)
+            print("****** >>> theme name is ", config)
+            return config
+        except KeyError:
+            return None
         
-    def get_theme(self, name):
+        
+    def get_custom_theme(self):
         """Get a theme by name."""
         prefix = "glisco.extensions.settings.theme"
         field = "design_configuration"
@@ -45,7 +52,7 @@ class ThemeView(BrowserView):
             print("****** >>> getting config from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
             print("****** >>> config is ", config)
-            return config
+            return json.dumps(config)
         except KeyError:
             return None
         
@@ -180,8 +187,11 @@ class ThemeView(BrowserView):
         }
 
     def site_theme(self):
-        self.get_config_from_file("neutral.json")
-        self.get_theme("neutral")
+        theme_name = self.get_theme_name()
+        default_theme_file = theme_name.split(".")[-1] + ".json"
+        default_theme = self.get_config_from_file(default_theme_file)
+        custom_theme = self.get_custom_theme()
+        print("********* site_theme >>> default_theme: ", default_theme, " >>>> custom:: ", custom_theme)
         return json.dumps(self.neutral_theme())
 
     def __call__(self):
