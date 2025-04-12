@@ -37,9 +37,9 @@ class ThemeView(BrowserView):
         field = "theme"
         try:
             # print("****** >>> getting theme name from ", prefix + "." + field)
-            config = api.portal.get_registry_record(prefix + "." + field)
-            # print("****** >>> theme name is ", config)
-            return json.dumps(config)
+            theme_name = api.portal.get_registry_record(prefix + "." + field)
+            print("****** >>> theme name is ", theme_name)
+            return theme_name
         except KeyError:
             return None
         
