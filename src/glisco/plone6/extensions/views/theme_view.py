@@ -18,11 +18,14 @@ class ThemeView(BrowserView):
 
     def get_config_from_file(self, filename):
         """Get configuration from a JSON file."""
-        relative_path = 
-        with open(filename, "r") as file:
-            this_path = "/".join(__file__.split("/")[:-2])
-            relative_path = "/".join(__file__.split("/")[:-2]) + "/path/to/your/folder/" + filename
-            print("********* >>> ", this_path, " >>>> ", relative_path)
+        this_path = "/".join(__file__.split("/")[:-2])
+        relative_path = "/".join(__file__.split("/")[:-2]) + "/path/to/your/folder/" + filename
+        print("********* >>> ", this_path, " >>>> ", relative_path)
+
+        # with open(filename, "r") as file:
+        #     this_path = "/".join(__file__.split("/")[:-2])
+        #     relative_path = "/".join(__file__.split("/")[:-2]) + "/path/to/your/folder/" + filename
+        #     print("********* >>> ", this_path, " >>>> ", relative_path)
             # with open(relative_path, "r") as file:
             #     return json.load(file)
         # Assuming the file contains a JSON object
