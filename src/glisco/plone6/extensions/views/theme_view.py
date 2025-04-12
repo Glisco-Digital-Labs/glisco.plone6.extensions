@@ -19,7 +19,7 @@ class ThemeView(BrowserView):
     def get_config_from_file(self, filename):
         """Get configuration from a JSON file."""
         theme_config_path = "/".join(__file__.split("/")[:-2]) + "/themes/data/" + filename
-        print("********* >>> ", this_path, " >>>> ", theme_config_path)
+        print("********* >>> ", theme_config_path)
 
         with open(theme_config_path, "r") as file:
             return json.load(file)
