@@ -194,6 +194,7 @@ class ThemeView(BrowserView):
             print("****** >>> custom_theme is ", custom_theme)
             # print("****** >>> type of custom_theme is ", type(custom_theme))
             if custom_theme is not None and custom_theme != "null":
+                print("****** >>> custom_theme is **", custom_theme, "**", custom_theme != "null")
                 return json.dumps(json.loads(custom_theme))
             else:
                 # If no custom theme is set, return the default theme
