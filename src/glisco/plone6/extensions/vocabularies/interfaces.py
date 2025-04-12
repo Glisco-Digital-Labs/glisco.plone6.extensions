@@ -375,5 +375,5 @@ class IThemeSettings(Interface):
     design_configuration = schema.JSONField(
         title="Theme Design Configuration",
         description="Theme Design Configuration",
-        required=True,
+        required=False, # We only use this for custom design config. We use default if not set
     )
