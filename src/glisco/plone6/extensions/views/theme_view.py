@@ -39,7 +39,7 @@ class ThemeView(BrowserView):
             # print("****** >>> getting theme name from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
             # print("****** >>> theme name is ", config)
-            return config
+            return json.dumps(config)
         except KeyError:
             return None
         
@@ -51,8 +51,12 @@ class ThemeView(BrowserView):
         try:
             # print("****** >>> getting config from ", prefix + "." + field)
             config = api.portal.get_registry_record(prefix + "." + field)
-            print("****** >>> config ", config.trim())
-            return json.dumps(config.trim())
+
+            if config is None:
+                return None
+            else:
+                return json.dumps(config)
+            
         except KeyError:
             return None
         
@@ -192,14 +196,14 @@ class ThemeView(BrowserView):
             default_theme_file = theme_name.split(".")[-1] + ".json"
             default_theme = self.get_config_from_file(default_theme_file)
             custom_theme = self.get_custom_theme()
-            print("****** >>> custom_theme is ", custom_theme)
+            # print("****** >>> custom_theme is ", custom_theme)
             # print("****** >>> type of custom_theme is ", type(custom_theme))
-            if custom_theme is not None and custom_theme != "null":
-                print("****** >>> custom_theme is **", custom_theme, "**", custom_theme != "null")
-                return json.dumps(json.loads(custom_theme))
+            if custom_theme is not None:
+                # print("****** >>> custom_theme is **", custom_theme, "**", custom_theme != "null")
+                return custom_theme
             else:
                 # If no custom theme is set, return the default theme
-                return json.dumps(json.loads(default_theme))
+                return default_theme
 
         except Exception as e:
             print("Error in ThemeView:", e)
