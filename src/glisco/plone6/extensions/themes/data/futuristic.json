@@ -1,0 +1,134 @@
+{
+    "themeName": "Futuristic Theme",
+    "description": "Sleek, high-tech UI with tight spacing and cyberpunk aesthetic",
+    
+    "colors": {
+        "mode": "light",
+        "baseColors": {
+            "accent": "hsl(208, 100%, 43%)",
+            "grey": "hsl(0, 0%, 40%)"
+        },
+        "colorRoles": {
+            "analogous": "hsl(178, 100%, 43%)",
+            "triadic1": "hsl(328, 100%, 43%)",
+            "triadic2": "hsl(88, 100%, 43%)"
+        },
+        "lightnessStops": [
+            0.07,
+            0.1,
+            0.15,
+            0.25,
+            0.35,
+            0.45,
+            0.55,
+            0.65,
+            0.75,
+            0.85,
+            0.92,
+            0.97
+        ]
+    },
+
+    "typography": {
+      "fontBaseSize": "16px",
+      "typeScale": 1.25,
+      "fontFamilies": {
+        "heading": {
+          "name": "Orbitron",
+          "fallback": "sans-serif",
+          "category": "sans",
+          "weights": [
+            400,
+            600,
+            700
+          ],
+          "style": "normal"
+        },
+        "body": {
+          "name": "Roboto",
+          "fallback": "sans-serif",
+          "category": "sans",
+          "weights": [
+            400,
+            500
+          ],
+          "style": "normal"
+        }
+      },
+      "lineHeight": {
+        "body": 1.6,
+        "heading": 1.3
+      },
+      "letterSpacing": {
+        "body": "normal",
+        "heading": "0.02em"
+      },
+      "textTransform": {
+        "heading": "none",
+        "nav": "uppercase"
+      },
+      "textDecoration": {
+        "link": "underline",
+        "hover": "none"
+      },
+      "verticalRhythmUnit": "8px",
+      "fontSizes": {
+        "h1": "2.488rem",
+        "h2": "2.074rem",
+        "h3": "1.728rem",
+        "h4": "1.44rem",
+        "h5": "1.2rem",
+        "body": "1rem",
+        "small": "0.833rem"
+      }
+    },
+
+    "spacing": {
+      "baseUnit": 4,
+      "density": "compact",
+      "scale": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        12,
+        16
+      ],
+      "gutters": {
+        "horizontal": 24,
+        "vertical": 32
+      },
+      "sectionSpacing": [
+        40,
+        80,
+        120
+      ],
+      "headingSpacing": {
+        "h1": "var(--space-8)",
+        "h2": "var(--space-6)",
+        "h3": "var(--space-4)",
+        "h4": "var(--space-2)",
+        "h5": "var(--space-1)"
+      },
+      "textSpacing": {
+        "body": "var(--space-2)",
+        "small": "var(--space-1)"
+      },
+      "containerWidths": {
+        "xs": null,
+        "sm": 540,
+        "md": 720,
+        "lg": 960,
+        "xl": 1140
+      },
+      "breakpoints": {
+        "xs": 0,
+        "sm": 576,
+        "md": 768,
+        "lg": 992,
+        "xl": 1200
+      }
+    }
+}

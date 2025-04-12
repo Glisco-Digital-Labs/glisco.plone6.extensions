@@ -371,3 +371,9 @@ class IThemeSettings(Interface):
         ),
         required=False,
     )
+
+    design_configuration = schema.JSONField(
+        title="Theme Design Configuration",
+        description="Theme Design Configuration",
+        required=True,
+    )
