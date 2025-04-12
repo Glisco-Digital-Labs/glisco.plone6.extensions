@@ -180,8 +180,8 @@ class ThemeView(BrowserView):
         }
 
     def site_theme(self):
-        get_config_from_file("neutral.json")
-        get_theme("neutral")
+        self.get_config_from_file("neutral.json")
+        self.get_theme("neutral")
         return json.dumps(self.neutral_theme())
 
     def __call__(self):
