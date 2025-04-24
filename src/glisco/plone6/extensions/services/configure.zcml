@@ -4,6 +4,9 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="glisco.plone6.extensions">
 
+    <include package="plone.rest" />
+    <include package="plone.restapi" />
+
     <browser:page
         name="portal-types"
         for="*"
