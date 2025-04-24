@@ -52,3 +52,11 @@ class PortalTypesService(BrowserView):
             "message": message,
             "data": fields
         }
+
+    def __call__(self):
+        method = self.request.method.upper()
+        handler = getattr(self, method, None)
+        if handler is None:
+            self.request.response.setStatus(405)
+            return {"error": f"Method {method} not allowed"}
+        return handler()
