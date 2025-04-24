@@ -7,14 +7,13 @@
     <include package="plone.rest" />
     <include package="plone.restapi" />
 
-    <browser:page
+    <plone:service
         name="portal-types"
+        method="GET"
         for="*"
-        class=".portal_types.PortalTypesService"
-        permission="zope2.View"
-        allowed_interface="plone.rest.interfaces.IAPIRequest"
-        layer="plone.rest.interfaces.IAPIRequest"
-        />
+        factory=".portal_types.services.PortalTypesServiceGet"
+        permission="zope2.View" 
+        /> 
 
     <plone:service
         name="portal-theme"
@@ -24,14 +23,5 @@
         permission="zope2.View" 
         />    
     
-    <!-- <browser:page
-        name="portal-theme"
-        for="*"
-        class=".themes.ThemesService"
-        permission="zope2.View"
-        allowed_interface="plone.rest.interfaces.IAPIRequest"
-        layer="plone.rest.interfaces.IAPIRequest"
-        /> -->
-
 </configure>
 

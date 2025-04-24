@@ -1,37 +1,29 @@
 import json
 from plone import api
+from plone.rest.interfaces import IAPIRequest
 from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
+from zope.interface import providedBy
 
-class PortalTypesService(Service):
+class PortalTypesServiceGet(Service):
 
     def __init__(self, context, request):
         self.context = context
-        self.request = request
-        try:
-            # This returns ALL portal types registered in the system
-            # including the ones that are not enabled
-            # in the registry.
-            # We need to filter them out later
-            # by checking the registry.
-            portal_types = getToolByName(context, "portal_types")
-            self.cms_types = portal_types.listContentTypes()
-        except Exception as e:
-            print("Error getting portal types:", e)
-            self.cms_types = []    
+        self.request = request       
         
-    def GET(self):
-        # List portal types
+    def reply(self):
         fields = []
         status = 200
         message = "OK"
         try:
+            portal_types = getToolByName(self.context, "portal_types")
+            cms_types = portal_types.listContentTypes()
             reg_record = api.portal.get_registry_record("glisco.extensions.settings.contenttypes.content_type_settings")
-            fields = [ t for t in reg_record if t in self.cms_types]
+            fields = [ t for t in reg_record if t in cms_types]
             print("**************  EnabledPortalTypes  **************")
             print(reg_record)
             print("**************  ALL PORTAL TYPES  **************")
-            print(self.cms_types)
+            print(cms_types)
             print("**************  fields (return)  **************")
             print(fields)
             print("************** /EnabledPortalTypes **************")
@@ -46,11 +38,3 @@ class PortalTypesService(Service):
             "message": message,
             "data": fields
         }
-
-    def __call__(self):
-        method = self.request.method.upper()
-        handler = getattr(self, method, None)
-        if handler is None:
-            self.request.response.setStatus(405)
-            return {"error": f"Method {method} not allowed"}
-        return handler()
