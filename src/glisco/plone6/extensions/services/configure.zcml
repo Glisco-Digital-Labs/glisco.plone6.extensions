@@ -10,6 +10,7 @@
         class=".portal_types.PortalTypesService"
         permission="zope2.View"
         allowed_interface="plone.rest.interfaces.IAPIRequest"
+        layer="plone.rest.interfaces.IAPIRequest"
         />
     
     <browser:page
@@ -18,6 +19,7 @@
         class=".themes.ThemesService"
         permission="zope2.View"
         allowed_interface="plone.rest.interfaces.IAPIRequest"
+        layer="plone.rest.interfaces.IAPIRequest"
         />
 
 </configure>
