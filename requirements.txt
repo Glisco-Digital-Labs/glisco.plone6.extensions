@@ -1,1 +1,5 @@
 -r requirements_plone60.txt
+
+plone.rest
+plone.restapi
+
