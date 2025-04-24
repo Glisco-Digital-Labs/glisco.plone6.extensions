@@ -45,6 +45,8 @@
 
     <include package=".views" />
 
+    <include package=".services" />
+
     <include package=".behaviors" />
 
 

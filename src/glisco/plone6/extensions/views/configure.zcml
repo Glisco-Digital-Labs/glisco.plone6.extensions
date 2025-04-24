@@ -6,13 +6,13 @@
 
  <!-- -*- extra stuff goes here -*- -->
 
-  <browser:page
+  <!-- <browser:page
     name="enabled-portal-types"
     for="*"
     class=".enabled_portal_types.EnabledPortalTypes"
     permission="zope2.View"
     layer="glisco.plone6.extensions.interfaces.IGliscoPlone6ExtensionsLayer"
-    />
+    /> -->
 
   <browser:page
     name="site-theme"
