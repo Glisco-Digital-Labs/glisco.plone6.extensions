@@ -13,7 +13,7 @@ class ThemesServiceGet(Service):
     
     def get_config_from_file(self, filename):
         """Get configuration from a JSON file."""
-        theme_config_path = "/".join(__file__.split("/")[:-2]) + "/themes/data/" + filename
+        theme_config_path = "/".join(__file__.split("/")[:-3]) + "/themes/data/" + filename
         print("********* >>> ", theme_config_path)
 
         with open(theme_config_path, "r") as file:
