@@ -6,6 +6,7 @@ from zope.component import adapter
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.publisher.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
+from zope.interface import providedBy
 
 @implementer(IBrowserRequest)
 @adapter(IAPIRequest)
@@ -207,6 +208,8 @@ class ThemesService(BrowserView):
             message = "Error retrieving theme: " + str(e)
             result = self.exception_theme()
         
+        print ("**************  result  **************")
+        print(type(result))
         return {
             "status": status,
             "message": message,
@@ -214,6 +217,9 @@ class ThemesService(BrowserView):
         }
 
     def __call__(self):
+        if not IAPIRequest in providedBy(self.request):
+            return {"error": "Not an API request"}
+        
         method = self.request.method.upper()
         handler = getattr(self, method, None)
         if handler is None:
