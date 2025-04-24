@@ -5,7 +5,7 @@ from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
 from zope.interface import providedBy
 
-class ThemesService(Service):
+class ThemesServiceGet(Service):
 
     def __init__(self, context, request):
         self.context = context
@@ -223,18 +223,6 @@ class ThemesService(Service):
     #     return handler()
 
 
-    def GET(self):
+    def reply(self):
+
         return {"message": "Hello JSON"}
-
-    def __call__(self):
-
-        print("Request provides:", list(providedBy(self.request)))
-
-        if not IAPIRequest in providedBy(self.request):
-            return {"error": "Not an API request"}
-        
-        handler = getattr(self, self.request.method.upper(), None)
-        if not handler:
-            self.request.response.setStatus(405)
-            return {"error": "Method not allowed"}
-        return handler()

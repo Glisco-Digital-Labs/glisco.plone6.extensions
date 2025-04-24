@@ -15,15 +15,23 @@
         allowed_interface="plone.rest.interfaces.IAPIRequest"
         layer="plone.rest.interfaces.IAPIRequest"
         />
+
+    <plone:service
+        name="portal-theme"
+        method="GET"
+        for="*"
+        factory=".themes.services.ThemesServiceGet"
+        permission="zope2.View" 
+        />    
     
-    <browser:page
+    <!-- <browser:page
         name="portal-theme"
         for="*"
         class=".themes.ThemesService"
         permission="zope2.View"
         allowed_interface="plone.rest.interfaces.IAPIRequest"
         layer="plone.rest.interfaces.IAPIRequest"
-        />
+        /> -->
 
 </configure>
 
