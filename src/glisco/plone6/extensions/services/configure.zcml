@@ -11,6 +11,14 @@
         permission="zope2.View"
         allowed_interface="plone.rest.interfaces.IAPIRequest"
         />
+    
+    <browser:page
+        name="portal-theme"
+        for="*"
+        class=".themes.ThemesService"
+        permission="zope2.View"
+        allowed_interface="plone.rest.interfaces.IAPIRequest"
+        />
 
 </configure>
 

@@ -14,13 +14,13 @@
     layer="glisco.plone6.extensions.interfaces.IGliscoPlone6ExtensionsLayer"
     /> -->
 
-  <browser:page
+  <!-- <browser:page
     name="site-theme"
     for="*"
     class=".theme_view.ThemeView"
     permission="zope2.View"
     layer="glisco.plone6.extensions.interfaces.IGliscoPlone6ExtensionsLayer"
-    />
+    /> -->
 
   <browser:page
     name="site-css-bundle"
