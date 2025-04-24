@@ -1,15 +1,9 @@
 import json
 from plone import api
-from plone.rest.interfaces import IAPIRequest
-from zope.interface import implementer
-from zope.component import adapter
-from zope.publisher.interfaces.browser import IBrowserRequest
-from zope.publisher.browser import BrowserView
+from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
 
-@implementer(IBrowserRequest)
-@adapter(IAPIRequest)
-class PortalTypesService(BrowserView):
+class PortalTypesService(Service):
 
     def __init__(self, context, request):
         self.context = context

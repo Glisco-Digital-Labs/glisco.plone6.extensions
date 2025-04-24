@@ -1,16 +1,11 @@
 import json
 from plone import api
 from plone.rest.interfaces import IAPIRequest
-from zope.interface import implementer
-from zope.component import adapter
-from zope.publisher.interfaces.browser import IBrowserRequest
-from zope.publisher.browser import BrowserView
+from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
 from zope.interface import providedBy
 
-@implementer(IBrowserRequest)
-@adapter(IAPIRequest)
-class ThemesService(BrowserView):
+class ThemesService(Service):
 
     def __init__(self, context, request):
         self.context = context
@@ -234,7 +229,7 @@ class ThemesService(BrowserView):
     def __call__(self):
 
         print("Request provides:", list(providedBy(self.request)))
-        
+
         if not IAPIRequest in providedBy(self.request):
             return {"error": "Not an API request"}
         
