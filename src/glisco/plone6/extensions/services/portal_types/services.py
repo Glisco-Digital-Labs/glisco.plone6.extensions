@@ -46,10 +46,12 @@ class PortalTypesServiceGet(Service):
             message = "Error retrieving portal types: " + str(e)
             print(e)
         
-        return {
-            "status": status,
-            "message": message,
-            "data": fields 
-            # "data" is the list of enabled portal types
-            # But is being rendered in non-json format, with ' instead of ". 
-        }
+        result = json.dumps({"status": status, "message": message, "data": fields})
+        return result
+        # return {
+        #     "status": status,
+        #     "message": message,
+        #     "data": json.fields 
+        #     # "data" is the list of enabled portal types
+        #     # But is being rendered in non-json format, with ' instead of ". 
+        # }
