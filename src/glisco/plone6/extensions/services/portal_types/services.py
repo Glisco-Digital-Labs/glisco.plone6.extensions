@@ -23,7 +23,7 @@ class PortalTypesServiceGet(Service):
             reg_record = api.portal.get_registry_record("glisco.extensions.settings.contenttypes.content_type_settings")
             print("**************  reg_record  **************")
             print(reg_record)
-            fields = [ t for t in reg_record if t in cms_types]
+            fields = cms_types if reg_record is None else [ t for t in reg_record if t in cms_types]
             print("**************  EnabledPortalTypes  **************")
             print(reg_record)
             print("**************  ALL PORTAL TYPES  **************")
