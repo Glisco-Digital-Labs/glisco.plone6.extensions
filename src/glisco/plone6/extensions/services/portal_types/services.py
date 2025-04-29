@@ -46,7 +46,14 @@ class PortalTypesServiceGet(Service):
             message = "Error retrieving portal types: " + str(e)
             print(e)
         
-        result = json.loads(json.dumps({"status": status, "message": message, "data": fields}))
+        result = json.loads(json.dumps({
+            "status": status, 
+            "message": message, 
+            "data": {
+                "enabled_portal_types": fields,
+                "all_portal_types": cms_types
+            }}))
+        
         return result
         # return {
         #     "status": status,
