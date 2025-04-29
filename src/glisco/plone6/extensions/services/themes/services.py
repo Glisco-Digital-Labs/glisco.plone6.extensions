@@ -32,8 +32,9 @@ class ThemesServiceGet(Service):
         field = "theme"
         # print("****** >>> getting theme name from ", prefix + "." + field)
         theme_name = api.portal.get_registry_record(prefix + "." + field)
-        print("****** >>> theme name is ", theme_name)
-        return theme_name
+        theme_to_use = "glisco.extensions.settings.theme.neutral" if theme_name is None else theme_name
+        print("****** >>> theme name is ", theme_to_use)
+        return theme_to_use
         
     def get_custom_theme(self):
         """Get a theme by name."""
